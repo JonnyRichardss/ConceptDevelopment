@@ -2,24 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResourceHolder
+static public class ResourceHolder
 {
-    public float Food
+    static public float Food
     {
         get;
         private set;
     }
-    public float Population
+    static public float Population
     {
         get;
         private set;
     }
-    public int RepSoviet
+    static public int RepSoviet
     {
         get;
         private set;
     }
-    public int RepPeople
+    static public int RepPeople
     {
         get;
         private set;
