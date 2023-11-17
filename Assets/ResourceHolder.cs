@@ -14,6 +14,11 @@ static public class ResourceHolder
         get;
         private set;
     }
+    static public float Suspicion
+    {
+        get;
+        private set;
+    }
     static public int RepSoviet
     {
         get;
