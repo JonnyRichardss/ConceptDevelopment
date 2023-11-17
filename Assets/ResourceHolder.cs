@@ -14,5 +14,15 @@ public class ResourceHolder
         get;
         private set;
     }
+    public int RepSoviet
+    {
+        get;
+        private set;
+    }
+    public int RepPeople
+    {
+        get;
+        private set;
+    }
 
 }
