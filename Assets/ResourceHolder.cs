@@ -7,29 +7,29 @@ public class ResourceHolder
     public float Food
     {
         get;
-        private set;
+        set;
     }
     public float Population
     {
         get;
-        private set;
+        set;
     }
     public float Suspicion
     {
         get;
-        private set;
+        set;
     }
     public int RepSoviet
     {
         get;
-        private set;
+        set;
     }
     public int RepPeople
     {
         get;
-        private set;
+        set;
     }
-    ResourceHolder()
+    public ResourceHolder()
     {
         Food = 0;
         Population = 0;
@@ -37,7 +37,7 @@ public class ResourceHolder
         RepSoviet = 0;
         RepPeople = 0;
     }
-    ResourceHolder(float food, float population, float suspicion, int repSoviet, int repPeople)
+    public ResourceHolder(float food, float population, float suspicion, int repSoviet, int repPeople)
     {
         Food = food;
         Population = population;
