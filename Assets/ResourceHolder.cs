@@ -29,5 +29,20 @@ public class ResourceHolder
         get;
         private set;
     }
-
+    ResourceHolder()
+    {
+        Food = 0;
+        Population = 0;
+        Suspicion = 0;
+        RepSoviet = 0;
+        RepPeople = 0;
+    }
+    ResourceHolder(float food, float population, float suspicion, int repSoviet, int repPeople)
+    {
+        Food = food;
+        Population = population;
+        Suspicion = suspicion;
+        RepSoviet = repSoviet;
+        RepPeople = repPeople;
+    }
 }
