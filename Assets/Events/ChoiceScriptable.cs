@@ -7,8 +7,5 @@ public class ChoiceScriptable : ScriptableObject
 {
     [SerializeField] string m_choiceName;
     [SerializeField] string m_choiceText;
-    [SerializeField] int m_foodChange;
-    [SerializeField] int m_populationChange;
-    [SerializeField] int m_peopleRepChange;
-    [SerializeField] int m_ussrRepChange;
+    [SerializeField] Effect m_effect;
 }
