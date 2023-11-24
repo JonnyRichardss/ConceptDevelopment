@@ -47,10 +47,28 @@ public class ResourceHolder
     }
     public void ApplyEffect(Effect e)
     {
+
         Food += e.Food;
         Population += e.Population;
         Suspicion += e.Suspicion;
         RepSoviet += e.RepSoviet;
-        RepPeople += e.RepPeople;      
+        RepPeople += e.RepPeople;
+    }
+    public bool TryApplyEffect(Effect e)
+    {
+        if (e.Duration == -1)
+        {
+            ApplyEffect(e);
+        }
+        if (e.Duration > 0)
+        {
+            e.Duration -= 1;
+            ApplyEffect(e);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

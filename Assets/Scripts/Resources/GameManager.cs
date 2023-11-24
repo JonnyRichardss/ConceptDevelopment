@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     ResourceHolder Resources; 
+    List<Effect> currentEffects = new List<Effect>();
+    List<Effect> buildingEffects = new List<Effect>();
     // Start is called before the first frame update
     void Start()
     {

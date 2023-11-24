@@ -4,6 +4,8 @@ using UnityEngine;
 
 public struct Effect
 {
+    public int Duration;
+
     public float Food;
 
     public float Population;
@@ -14,8 +16,9 @@ public struct Effect
 
     public int RepPeople;
 
-    public Effect(float food=0, float population = 0, float suspicion = 0, int repSoviet=0, int repPeople = 0)
+    public Effect(int duration = 0, float food=0, float population = 0, float suspicion = 0, int repSoviet=0, int repPeople = 0)
     {
+        Duration = duration;
         Food = food;
         Population = population;
         Suspicion = suspicion;
