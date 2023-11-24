@@ -45,4 +45,12 @@ public class ResourceHolder
         RepSoviet = repSoviet;
         RepPeople = repPeople;
     }
+    public void ApplyEffect(Effect e)
+    {
+        Food += e.Food;
+        Population += e.Population;
+        Suspicion += e.Suspicion;
+        RepSoviet += e.RepSoviet;
+        RepPeople += e.RepPeople;      
+    }
 }
