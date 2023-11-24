@@ -59,12 +59,18 @@ public class ResourceHolder
         if (e.Duration == -1)
         {
             ApplyEffect(e);
+            return true;
         }
-        if (e.Duration > 0)
+        else if (e.Duration > 0)
         {
             e.Duration -= 1;
             ApplyEffect(e);
             return true;
+        }
+        else if (e.Duration == 0)
+        {
+            ApplyEffect(e);
+            return false;
         }
         else
         {

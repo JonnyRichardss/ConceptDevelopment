@@ -5,8 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     ResourceHolder Resources; 
-    List<Effect> currentEffects = new List<Effect>();
-    List<Effect> buildingEffects = new List<Effect>();
+    List<Effect> Effects = new List<Effect>();
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +17,18 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+    }
+    void ApplyAllEffects()
+    {
+        List<Effect> effectsTemp = new List<Effect>();
+        foreach(Effect effect in Effects)
+        {
+            if (Resources.TryApplyEffect(effect))
+            {
+                effectsTemp.Add(effect);
+            }
+        }
+        Effects = effectsTemp;
     }
     public void ChangePopulation(float factor)
     {
