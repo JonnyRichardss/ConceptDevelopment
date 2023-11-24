@@ -7,37 +7,30 @@ public class ResourceHolder
     public float Food
     {
         get;
-        set;
+        private set;
     }
     public float Population
     {
         get;
-        set;
+        private set;
     }
     public float Suspicion
     {
         get;
-        set;
+        private set;
     }
     public int RepSoviet
     {
         get;
-        set;
+        private set;
     }
     public int RepPeople
     {
         get;
-        set;
+        private set;
     }
-    public ResourceHolder()
-    {
-        Food = 0;
-        Population = 0;
-        Suspicion = 0;
-        RepSoviet = 0;
-        RepPeople = 0;
-    }
-    public ResourceHolder(float food, float population, float suspicion, int repSoviet, int repPeople)
+
+    public ResourceHolder(float food=0, float population=0, float suspicion=0, int repSoviet=0, int repPeople=0)
     {
         Food = food;
         Population = population;
@@ -45,7 +38,7 @@ public class ResourceHolder
         RepSoviet = repSoviet;
         RepPeople = repPeople;
     }
-    public void ApplyEffect(Effect e)
+    private void ApplyEffect(Effect e)
     {
 
         Food += e.Food;
