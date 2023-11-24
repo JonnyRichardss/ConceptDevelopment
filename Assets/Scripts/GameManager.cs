@@ -5,11 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     ResourceHolder Resources; 
-    List<Effect> Effects = new List<Effect>();
+    List<Effect> Effects;
     // Start is called before the first frame update
     void Start()
     {
         Resources = new ResourceHolder(100f,100f,0f,0,0);
+        Effects = new List<Effect>();
 
     }
 
@@ -29,25 +30,5 @@ public class GameManager : MonoBehaviour
             }
         }
         Effects = effectsTemp;
-    }
-    public void ChangePopulation(float factor)
-    {
-        Resources.Population += factor;
-    }
-    public void ChangeFood(float factor)
-    {
-        Resources.Food += factor;
-    }
-    public void ChangeSuspicion(float factor)
-    {
-        Resources.Suspicion += factor;
-    }
-    public void ChangeSovietRep(int factor)
-    {
-        Resources.RepSoviet += factor;
-    }
-    public void ChangePeopleRep(int factor)
-    {
-        Resources.RepPeople += factor;
     }
 }
