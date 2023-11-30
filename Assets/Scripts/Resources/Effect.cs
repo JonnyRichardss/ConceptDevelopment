@@ -25,4 +25,15 @@ public struct Effect
         RepSoviet = repSoviet;
         RepPeople = repPeople;
     }
+    public static Effect operator + (Effect a, Effect b)
+    {
+        Effect output = new Effect();
+        output.Duration = a.Duration > b.Duration ? a.Duration : b.Duration; //pick the longer duration from A or B
+        output.Food = a.Food + b.Food;
+        output.Population = a.Population + b.Population;
+        output.Suspicion = a.Suspicion + b.Suspicion;
+        output.RepSoviet = a.RepSoviet + b.RepSoviet;
+        output.RepPeople = a.RepPeople + b.RepPeople;
+        return output;
+    }
 }

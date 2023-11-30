@@ -6,7 +6,9 @@ public class GameManager : MonoBehaviour
 {
     ResourceHolder Resources; 
     List<Effect> Effects;
+    List<BuildingScriptable> Buildings;
     GameState state;
+    Effect TurnSummary;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,8 @@ public class GameManager : MonoBehaviour
     {
         Resources = new ResourceHolder(100f, 100f, 0f, 0, 0);
         Effects = new List<Effect>();
+        Buildings = new List<BuildingScriptable>();
+        TurnSummary = new Effect();
         state = GameState.ThroneRoom;
     }
     private void AdvanceState()
@@ -34,7 +38,13 @@ public class GameManager : MonoBehaviour
             {
                 effectsTemp.Add(effect);
             }
+            TurnSummary += effect;
         }
         Effects = effectsTemp;
+    }
+    public void ApplyChoice(ChoiceScriptable choice)
+    {
+        Resources.TryApplyEffect(choice.m_choiceEffect);
+        TurnSummary += choice.m_choiceEffect;
     }
 }

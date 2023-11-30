@@ -7,5 +7,5 @@ public class ChoiceScriptable : ScriptableObject
 {
     [SerializeField] string m_choiceName;
     [SerializeField] string m_choiceText;
-    [SerializeField] Effect m_choiceEffect;
+    public Effect m_choiceEffect;
 }
