@@ -46,7 +46,7 @@ static public class BalanceLogging
     static private void Write(string data)
     {
         if (currentPath == "") CreateNewLog();
-        StreamWriter sw = File.AppendText(Application.persistentDataPath + currentPath);
+        StreamWriter sw = File.AppendText(Application.persistentDataPath + "/"+ currentPath);
         sw.WriteLine(data);
     }
 }
