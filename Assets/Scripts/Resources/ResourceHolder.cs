@@ -46,6 +46,7 @@ public class ResourceHolder
         Suspicion += e.Suspicion;
         RepSoviet += e.RepSoviet;
         RepPeople += e.RepPeople;
+        BalanceLogging.Log(e);
     }
     public bool TryApplyEffect(Effect e)
     {
