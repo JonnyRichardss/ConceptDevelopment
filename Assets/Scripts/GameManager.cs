@@ -47,4 +47,26 @@ public class GameManager : MonoBehaviour
         Resources.TryApplyEffect(choice.m_choiceEffect);
         TurnSummary += choice.m_choiceEffect;
     }
+    private void SwitchView()
+    {
+        switch (state)
+        {
+            case GameState.Menu:
+                //dothings
+                break;
+            case GameState.ThroneRoom:
+                //dothings
+                break;
+            case GameState.CityView:
+                //dothings
+                break;
+            case GameState.ShowResources:
+                //dothings
+                break;
+            default:
+                Debug.Log("GameState hit an invalid value while trying to switch!!!!");
+                throw new System.Exception("WTF");
+        }
+
+    }
 }

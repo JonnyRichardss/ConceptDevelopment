@@ -9,6 +9,5 @@ public class BuildingScriptable : ScriptableObject
     [SerializeField] string m_buildingText;
     [SerializeField] Effect m_buildingEffect;
     [SerializeField] Vector2 m_buildingCoordinates;
-
 }
 
