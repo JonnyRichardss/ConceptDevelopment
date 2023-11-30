@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BalanceLogging : MonoBehaviour
+public class BalanceLogging
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Log(Effect e)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("Logged new effect");
+        //make log of new resources
     }
 }
