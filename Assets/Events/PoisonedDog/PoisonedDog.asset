@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PoisonedDog
   m_EditorClassIdentifier: 
   m_eventName: Poisoned Dog
+  m_eventTitle: 
   m_eventText: Your mum has been poisoned!
-  m_firstChoice: {fileID: 0}
-  m_secondChoice: {fileID: 0}
+  m_firstChoice: {fileID: 11400000, guid: 802ead6c0f4b1cf4f8c2bcd1b1bf3944, type: 2}
+  m_secondChoice: {fileID: 11400000, guid: 08faca07864cd3a45a6506c2cfeaf856, type: 2}

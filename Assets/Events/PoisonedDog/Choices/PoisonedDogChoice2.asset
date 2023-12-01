@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: PoisonedDogChoice2
   m_EditorClassIdentifier: 
   m_choiceName: Suits Me
+  m_choiceTitle: 
   m_choiceText: You allow the man to eat the dog
-  m_foodChange: 5
-  m_populationChange: 0
-  m_peopleRepChange: -1
-  m_ussrRepChange: 0
+  m_choiceEffect:
+    Duration: 0
+    Food: 1
+    Population: 0
+    Suspicion: 0
+    RepSoviet: 0
+    RepPeople: -1
