@@ -6,8 +6,8 @@ using UnityEngine;
 public class EventScriptable : ScriptableObject
 {
     public string m_eventName;
-    [SerializeField] string m_eventTitle;
-    [SerializeField] string m_eventText;
-    [SerializeField] ChoiceScriptable m_firstChoice;
-    [SerializeField] ChoiceScriptable m_secondChoice;
+    public string m_eventTitle;
+    public string m_eventText;
+    public ChoiceScriptable m_firstChoice;
+    public ChoiceScriptable m_secondChoice;
 }

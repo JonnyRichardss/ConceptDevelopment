@@ -6,7 +6,7 @@ using UnityEngine;
 public class ChoiceScriptable : ScriptableObject
 {
     public string m_choiceName;
-    [SerializeField] string m_choiceTitle;
-    [SerializeField] string m_choiceText;
-    public Effect m_choiceEffect;
+    [SerializeField] public string m_choiceTitle;
+    [SerializeField] public string m_choiceText;
+    [SerializeField] public Effect m_choiceEffect;
 }
