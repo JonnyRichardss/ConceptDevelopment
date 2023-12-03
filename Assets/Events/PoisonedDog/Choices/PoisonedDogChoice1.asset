@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
-  m_Name: PoisonedDogChoice2
+  m_Name: PoisonedDogChoice1
   m_EditorClassIdentifier: 
-  m_choiceName: Suits Me
-  m_choiceText: You allow the man to eat the dog
-  m_foodChange: 5
-  m_populationChange: 0
-  m_peopleRepChange: -1
-  m_ussrRepChange: 0
+  m_choiceName: Find the culprit
+  m_choiceTitle: 
+  m_choiceText: You imprison the person who poisoned the dog.
+  m_choiceEffect:
+    Duration: 0
+    Food: -2
+    Population: -1
+    Suspicion: 0
+    RepSoviet: 0
+    RepPeople: 0
