@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     ResourceHolder Resources; 
     List<Effect> Effects;
     List<BuildingScriptable> Buildings;
     GameState state;
     Effect TurnSummary;
-    // Start is called before the first frame update
+    //awake is caleld even if the object is disabled apaprently
+    private void Awake()
+    {
+        //makes sure gamemanager only exists once
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
         Resources = new ResourceHolder();
