@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public static int currentSceneIndex;
+    GameState state;
     ResourceHolder Resources; 
     List<Effect> Effects;
     List<BuildingScriptable> Buildings;
-    GameState state;
+    
     Effect TurnSummary;
     //awake is caleld even if the object is disabled apaprently
     private void Awake()
@@ -19,11 +22,9 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        currentSceneIndex = 4;
         instance = this;
         DontDestroyOnLoad(gameObject);
-    }
-    void Start()
-    {
         Resources = new ResourceHolder();
         Effects = new List<Effect>();
         state = GameState.Menu;
@@ -35,7 +36,18 @@ public class GameManager : MonoBehaviour
         Effects = new List<Effect>();
         Buildings = new List<BuildingScriptable>();
         TurnSummary = new Effect();
-        state = GameState.ThroneRoom;
+        state = GameState.VillageHall;
+        SwitchView();
+    }
+    public void ExitToMenu()
+    {
+        state = GameState.Menu;
+        SwitchView();
+    }
+    public void LoadScene(int sceneIndex)
+    {
+        currentSceneIndex = sceneIndex;
+        SceneManager.LoadScene(sceneIndex);
     }
     private void AdvanceState()
     {
@@ -64,13 +76,13 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case GameState.Menu:
-                //dothings
+                LoadScene(0);
                 break;
-            case GameState.ThroneRoom:
-                //dothings
+            case GameState.VillageHall:
+                LoadScene(1);
                 break;
             case GameState.CityView:
-                //dothings
+                LoadScene(2);
                 break;
             case GameState.ShowResources:
                 //dothings
