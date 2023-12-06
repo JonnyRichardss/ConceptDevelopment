@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ResourceHolder
+public class ResourceHolder : ILoggable
 {
     public float Food
     {
@@ -87,5 +87,9 @@ public class ResourceHolder
 
 
         return output;
+    }
+    public string LogDebugMessage()
+    {
+        return "Logged resources after new effect";
     }
 }

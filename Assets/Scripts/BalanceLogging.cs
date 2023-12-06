@@ -13,6 +13,7 @@ static public class BalanceLogging
         FileStream fs = File.Open(Application.persistentDataPath + "/" + currentPath, FileMode.CreateNew);
         fs.Close();
     }
+    /*
     static public void Log(EventScriptable e, ChoiceScriptable c)
     {
         Debug.Log("Logged new choice");
@@ -28,6 +29,12 @@ static public class BalanceLogging
     {
         Debug.Log("Logged new building");
        // EnterLog();
+    }
+    */
+    static public void Log(ILoggable obj)
+    {
+        Debug.Log(obj.LogDebugMessage());
+        WriteLog(obj.ToLogString());
     }
     static public void WriteLog(string data)
     {
