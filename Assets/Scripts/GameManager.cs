@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     
     Effect TurnSummary;
     
-    int RemainingEvents;
     //awake is caleld even if the object is disabled apaprently
     private void Awake()
     {
@@ -39,8 +38,8 @@ public class GameManager : MonoBehaviour
         Effects = new List<Effect>();
         Buildings = new List<BuildingScriptable>();
         TurnSummary = new Effect();
-        state = GameState.DrawEvents;
-        SwitchView();
+        state = GameState.ShowResources;
+        NewTurn();
     }
     public void ExitToMenu()
     {
@@ -49,30 +48,31 @@ public class GameManager : MonoBehaviour
     }
     #endregion
     #region GameLoop
-    void NewTurn()
+    public void NewTurn()
     {
+        if(TurnNumber != 0)
+        {
+            //display summary here
+        }
         TurnNumber++;
-        //display summary here
         Debug.Log("Resource Showing not Implemented yet");
-        RemainingEvents = 4;
-        AdvanceState();
+
+        //AdvanceState();
+        //TryNextEvent();
+        //turn logging goes in here
     }
-    bool TryNextEvent()
+
+    public void DrawEvents()
     {
-        if (RemainingEvents == 0)
+        for (int RemainingEvents=4;RemainingEvents == 0; RemainingEvents--)
         {
-            return false;
+            EventManager.DrawEvent(Resources);
+            //do more here
         }
-        EventManager.DrawEvent(Resources);
-        if (!TryNextEvent())
-        {
-            //moveon
-            AdvanceState();
-            Debug.Log("Event Drawing not implemented yet");
-        }
-        return true;
+        AdvanceState();
+        Debug.Log("Event Drawing not implemented yet");
     }
-    void DrawBuildings()
+    public void DrawBuildings()
     {
         List<BuildingScriptable> buildings = BuildingManager.DrawBuildings(Resources);
         //display all
@@ -107,12 +107,12 @@ public class GameManager : MonoBehaviour
         currentSceneIndex = sceneIndex;
         SceneManager.LoadScene(sceneIndex);
     }
-    private void AdvanceState()
+    public void AdvanceState()
     {
         state = (GameState)(((int)state + 1) % 3);
         SwitchView();
     }
-    private void SwitchView()
+    public void SwitchView()
     {
         switch (state)
         {
@@ -121,11 +121,14 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.DrawEvents:
                 LoadScene(1);
+                DrawEvents();
                 break;
             case GameState.DrawBuildings:
                 LoadScene(2);
+                DrawBuildings();
                 break;
             case GameState.ShowResources:
+                LoadScene(1);
                 NewTurn();
                 break;
             default:

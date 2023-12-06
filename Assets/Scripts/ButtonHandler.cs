@@ -26,4 +26,8 @@ using UnityEngine.SceneManagement;
     {
         GameManager.instance.ExitToMenu();
     }
+    public void EventsButton()
+    {
+        GameManager.instance.AdvanceState();
+    }
 }
