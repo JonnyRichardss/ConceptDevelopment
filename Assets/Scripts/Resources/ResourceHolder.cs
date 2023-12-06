@@ -73,4 +73,19 @@ public class ResourceHolder
             return false;
         }
     }
+    public string ToLogString()
+    {
+        string output = String.Format(
+            "Updated Resources:\n" +
+            "Food: {0}\n" +
+            "Population: {1}\n" +
+            "Suspicion: {2}\n" +
+            "Soviet Rep: {3}\n" +
+            "People Rep: {4}",
+            Food, Population, Suspicion, RepSoviet, RepPeople);
+        
+
+
+        return output;
+    }
 }

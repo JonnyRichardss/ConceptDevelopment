@@ -3,50 +3,39 @@ using System.Collections.Generic;
 using System;
 using System.IO;
 using UnityEngine;
-[Serializable]
-struct LogEntry
-{
-    public DateTime currentTime;
-    public object logObject;
-    public LogEntry(object o)
-    {
-        logObject = o;
-        currentTime = DateTime.Now;
-    }
-}
-
 static public class BalanceLogging
 {
     static private string currentPath = "";
     static public void CreateNewLog()
     {
         //make new file with current time
-        currentPath = String.Format("{0}-log.json",DateTime.Now);
+        currentPath = String.Format("{0}-log.txt",DateTime.Now.ToString("yyyy-mm-dd_hh.mm.ss"));
+        FileStream fs = File.Open(Application.persistentDataPath + "/" + currentPath, FileMode.CreateNew);
+        fs.Close();
     }
     static public void Log(EventScriptable e, ChoiceScriptable c)
     {
         Debug.Log("Logged new choice");
         string stringToLog = String.Format("{0} chosen {1}", e.name, c.name);
-        EnterLog(new LogEntry(stringToLog));
+       // EnterLog(new );
     }
     static public void Log(ResourceHolder r)
     {
         Debug.Log("Logged resources after new effect");
-        EnterLog(new LogEntry(r));
+       WriteLog(r.ToLogString());
     }
     static public void Log(BuildingScriptable b)
     {
         Debug.Log("Logged new building");
-        EnterLog(new LogEntry(b));
+       // EnterLog();
     }
-    static private void EnterLog(LogEntry log)
+    static public void WriteLog(string data)
     {
-        Write(JsonUtility.ToJson(log));
-    }
-    static private void Write(string data)
-    {
+        data = "{\n" + DateTime.Now + "\n" + data + "\n}";
         if (currentPath == "") CreateNewLog();
+
         StreamWriter sw = File.AppendText(Application.persistentDataPath + "/"+ currentPath);
         sw.WriteLine(data);
+        sw.Close();
     }
 }
