@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
- public class SceneChange : MonoBehaviour
+ public class ButtonHandler : MonoBehaviour
 {
     //this script is just used so that the buttons can access gamemanager while its in dontdestroyonload
      public void LoadScene(int sceneIndex)
