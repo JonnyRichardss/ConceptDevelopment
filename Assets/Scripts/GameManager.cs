@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
     {
         if(TurnNumber != 0)
         {
+            AddBuildings(); //add building effects to effects list
+            ApplyAllEffects(); //apply
             //display summary here
         }
         TurnNumber++;
@@ -68,6 +70,7 @@ public class GameManager : MonoBehaviour
         {
             EventManager.DrawEvent(Resources);
             //do more here
+            //probably ApplyChoice()
         }
         AdvanceState();
         Debug.Log("Event Drawing not implemented yet");
@@ -94,6 +97,13 @@ public class GameManager : MonoBehaviour
             TurnSummary += effect;
         }
         Effects = effectsTemp;
+    }
+    public void AddBuildings()
+    {
+        foreach(BuildingScriptable b in Buildings)
+        {
+            Effects.Add(b.m_buildingEffect);
+        }
     }
     public void ApplyChoice(ChoiceScriptable choice)
     {
