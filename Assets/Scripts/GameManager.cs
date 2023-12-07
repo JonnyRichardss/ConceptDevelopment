@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
         Buildings = new List<BuildingScriptable>();
         TurnSummary = new Effect();
         state = GameState.ShowResources;
+        BuildingManager.Reset();
         NewTurn();
     }
     public void ExitToMenu()
