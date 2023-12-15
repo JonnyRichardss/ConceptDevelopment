@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     //awake is caleld even if the object is disabled apaprently
     private void Awake()
     {
+        Debug.Log(Application.persistentDataPath);
         //makes sure gamemanager only exists once
         if (instance != null)
         {
@@ -39,7 +40,8 @@ public class GameManager : MonoBehaviour
         Buildings = new List<BuildingScriptable>();
         TurnSummary = new Effect();
         state = GameState.ShowResources;
-        BuildingManager.Reset();
+        SwitchView();
+        //BuildingManager.Reset();
         NewTurn();
     }
     public void ExitToMenu()
@@ -78,7 +80,7 @@ public class GameManager : MonoBehaviour
     }
     public void DrawBuildings()
     {
-        List<BuildingScriptable> buildings = BuildingManager.DrawBuildings(Resources);
+        //List<BuildingScriptable> buildings = BuildingManager.DrawBuildings(Resources);
         //display all
         //place one
         Debug.Log("Building placing not implemented");

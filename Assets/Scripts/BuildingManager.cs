@@ -4,9 +4,9 @@ using UnityEngine;
 
 public static class BuildingManager
 {
-     public static List<BuildingScriptable> NewDrawPile;
-    public static List<BuildingScriptable> DrawPile;
-    public static List<BuildingScriptable> DiscardPile;
+     public static List<BuildingScriptable> NewDrawPile = new List<BuildingScriptable>();
+    public static List<BuildingScriptable> DrawPile = new List<BuildingScriptable>();
+    public static List<BuildingScriptable> DiscardPile = new List<BuildingScriptable>();
     public static List<BuildingScriptable> DrawBuildings(ResourceHolder weighting)
     {
         if (DrawPile.Count < 4)
