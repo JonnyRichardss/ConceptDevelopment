@@ -2037,6 +2037,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventTesterCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6861545590128638447, guid: 0c5bf34ccb5b8e248b3686e298e870d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8383321060051847666, guid: 0c5bf34ccb5b8e248b3686e298e870d0, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
