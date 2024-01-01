@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff9025627c1b41428905ca21e06d79b, type: 3}
+  m_Name: PeopleBeingEaten
+  m_EditorClassIdentifier: 
+  m_eventName: People being eaten
+  m_eventTitle: People being eaten
+  m_eventText: "People don\u2019t have enough food to eat, and so they are turning
+    on each other, bodies lying in the streets and hunger desperation has set in,
+    people have started to eat each other."
+  m_firstChoice: {fileID: 11400000, guid: edfc8426a025fb14789bc172b69ca796, type: 2}
+  m_secondChoice: {fileID: 11400000, guid: a735076112d7d604a8178726d92f6974, type: 2}
