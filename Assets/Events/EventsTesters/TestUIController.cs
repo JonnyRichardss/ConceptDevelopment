@@ -32,6 +32,11 @@ public class TestUIController : MonoBehaviour
         
     }
 
+    public void SetRandomEventUI()
+    {
+        SetEventUI(gameManager.GetComponent<EventTestScript>().Events[Random.Range(0, gameManager.GetComponent<EventTestScript>().Events.Count)]);
+    }
+
     public void SetEventUI(EventScriptable newEvent)
     {
         m_event.gameObject.SetActive(true);

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff9025627c1b41428905ca21e06d79b, type: 3}
+  m_Name: ALetterFromLenin
+  m_EditorClassIdentifier: 
+  m_eventName: A letter from lenin to molotov
+  m_eventTitle: A letter from lenin to molotov
+  m_eventText: "\u201CRight now, and only now, when people are being eaten in famine
+    areas and hundreds, if not thousands, of corpses are lying on the roads, we can
+    (and therefore must) carry out the seizure of church values with the most frantic
+    and ruthless energy, without stopping before the suppression of any resistance\u201D"
+  m_firstChoice: {fileID: 11400000, guid: ad72076c485073f49936524afb1b8318, type: 2}
+  m_secondChoice: {fileID: 11400000, guid: 2cdea684b320ceb40bfbaadb5374fa5b, type: 2}

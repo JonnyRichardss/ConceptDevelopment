@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff9025627c1b41428905ca21e06d79b, type: 3}
+  m_Name: AimlessMovement
+  m_EditorClassIdentifier: 
+  m_eventName: Aimless Movement
+  m_eventTitle: Aimless Movement
+  m_eventText: "Ukrainian peasants are travelling around ukraine in search of something,
+    the peasants themselves don\u2019t really know where they are going but hope
+    to find somewhere that is \u2018better\u2019"
+  m_firstChoice: {fileID: 11400000, guid: 3dfddd69365a90048b07668c7c70db22, type: 2}
+  m_secondChoice: {fileID: 11400000, guid: ef3637c8f1787cb4db2de6062364e580, type: 2}

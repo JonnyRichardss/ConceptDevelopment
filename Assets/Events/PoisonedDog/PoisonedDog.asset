@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_eventName: Poisoned Dog
   m_eventTitle: 
-  m_eventText: Your mum has been poisoned!
+  m_eventText: "A family has had their dog poisoned, perhaps it was too noisy, perhaps
+    it was taking too much food, the owner is clearly very upset about it but you
+    don\u2019t know who did it."
   m_firstChoice: {fileID: 11400000, guid: 802ead6c0f4b1cf4f8c2bcd1b1bf3944, type: 2}
   m_secondChoice: {fileID: 11400000, guid: 08faca07864cd3a45a6506c2cfeaf856, type: 2}
