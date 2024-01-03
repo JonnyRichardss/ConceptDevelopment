@@ -70,7 +70,19 @@ public class BuildingPlacement : MonoBehaviour
 
     void OnPlaceBuilding()
     {
-        isPlacingBuilding = false;
-        currentBuilding = null;
+        if (currentBuilding != null)
+        {
+            BuildingController currentController = currentBuilding.GetComponent<BuildingController>();
+            if (currentController.isPlaceable)
+            {
+                isPlacingBuilding = false;
+                currentController.isPlaced = true;
+                currentBuilding = null;
+            }
+            else
+            {
+                Debug.Log("can't build there");
+            }
+        }
     }
 }
