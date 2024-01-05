@@ -9,13 +9,10 @@ public class GameManager : MonoBehaviour
     ResourceHolder Resources; 
     List<Effect> Effects;
     List<BuildingScriptable> Buildings;
-<<<<<<< Updated upstream
     GameState state;
-=======
 
     public Text summaryText;
 
->>>>>>> Stashed changes
     Effect TurnSummary;
     // Start is called before the first frame update
     void Start()
@@ -37,8 +34,6 @@ public class GameManager : MonoBehaviour
     {
         state = (GameState) (((int)state + 1) % 3);
     }
-<<<<<<< Updated upstream
-=======
     #endregion
     #region GameLoop
     public void NewTurn()
@@ -109,7 +104,6 @@ public class GameManager : MonoBehaviour
     }
     #endregion
     #region ApplyEffects
->>>>>>> Stashed changes
     private void ApplyAllEffects()
     {
         List<Effect> effectsTemp = new List<Effect>();
