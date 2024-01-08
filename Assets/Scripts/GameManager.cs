@@ -47,10 +47,11 @@ public class GameManager : MonoBehaviour
         SwitchView();
     }
     #endregion
+    
     #region GameLoop
     public void NewTurn()
     {
-        if (TurnNumber != 0)
+        if(TurnNumber != 0)
         {
             AddBuildings(); //add building effects to effects list
             ApplyAllEffects(); //apply
