@@ -130,6 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563c5f2ac2bebf1419403a72df1c31e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlaceable: 1
+  isPlaced: 0
+  buildingEffect: {fileID: 11400000, guid: 519e57baa959c464db8559985847b952, type: 2}
 --- !u!65 &8702268458322963365
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -174,7 +177,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

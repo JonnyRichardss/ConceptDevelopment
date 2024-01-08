@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7776601237562967950}
   m_Layer: 7
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1390400893732794826}
   m_Layer: 7
   m_Name: Farm
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,6 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563c5f2ac2bebf1419403a72df1c31e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlaceable: 1
+  isPlaced: 0
+  buildingEffect: {fileID: 11400000, guid: 550512dd975d65947b7fe326a308b720, type: 2}
 --- !u!65 &7064863896360044665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -174,7 +177,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

@@ -12,19 +12,18 @@ public class GameManager : MonoBehaviour
     GameState state;
     public int TurnNumber;
     ResourceHolder Resources; 
-    List<Effect> Effects;
-    List<BuildingScriptable> Buildings;
-<<<<<<< HEAD
+
+    public List<Effect> Effects;
+    public List<BuildingScriptable> Buildings;
+
     
-=======
-<<<<<<< Updated upstream
+
     GameState state;
-=======
+
 
     public Text summaryText;
 
->>>>>>> Stashed changes
->>>>>>> 55dd0d3b6e8175d123d8c660284c997f1513de91
+
     Effect TurnSummary;
     
     //awake is caleld even if the object is disabled apaprently
@@ -117,10 +116,7 @@ public class GameManager : MonoBehaviour
         AdvanceState();
         Debug.Log("Event Drawing not implemented yet");
     }
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
+
     #endregion
     #region GameLoop
     public void NewTurn()
@@ -181,7 +177,7 @@ public class GameManager : MonoBehaviour
         AdvanceState();
         Debug.Log("Event Drawing not implemented yet");
     }
->>>>>>> 55dd0d3b6e8175d123d8c660284c997f1513de91
+
     public void DrawBuildings()
     {
         List<BuildingScriptable> buildings = BuildingManager.DrawBuildings(Resources);
@@ -192,10 +188,7 @@ public class GameManager : MonoBehaviour
     }
     #endregion
     #region ApplyEffects
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> 55dd0d3b6e8175d123d8c660284c997f1513de91
+
     private void ApplyAllEffects()
     {
         List<Effect> effectsTemp = new List<Effect>();
