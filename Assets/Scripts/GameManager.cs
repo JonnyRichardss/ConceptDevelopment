@@ -59,65 +59,7 @@ public class GameManager : MonoBehaviour
         SwitchView();
     }
     #endregion
-    #region GameLoop
-    public void NewTurn()
-    {
-        if(TurnNumber != 0)
-        {
-            AddBuildings(); //add building effects to effects list
-            ApplyAllEffects(); //apply
-            DisplaySummary();//display summary here
-        }
-        TurnNumber++;
-        Debug.Log("Resource Showing not Implemented yet");
-
-        //AdvanceState();
-        //TryNextEvent();
-        //turn logging goes in here
-    }
-    private void DisplaySummary()
-    {
-        //Canvas with a Text UI element named "SummaryText"
-        if (summaryText != null)
-        {
-            // Customize this message based on the summary you want to display
-            string summaryMessage = $"Turn {TurnNumber} summary:\nBuildings added, effects applied.";
-
-            // Set the text of the UI element
-            summaryText.text = summaryMessage;
-
-            // Activate the Canvas or show the pop-up
-            summaryText.gameObject.SetActive(true);
-
-            //Coroutine or a timer to hide the pop-up after some time
-            StartCoroutine(HideSummaryAfterDelay(3f)); // Hide after 3 seconds (adjust as needed)
-        }
-    }
-
-    private IEnumerator HideSummaryAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        //Canvas with a Text UI element named "SummaryText"
-        if (summaryText != null)
-        {
-            //Hide the pop-up
-            summaryText.gameObject.SetActive(false);
-        }
-    }
-    public void DrawEvents()
-    {
-        for (int RemainingEvents=4;RemainingEvents == 0; RemainingEvents--)
-        {
-            EventManager.DrawEvent(Resources);
-            //do more here
-            //probably ApplyChoice()
-        }
-        AdvanceState();
-        Debug.Log("Event Drawing not implemented yet");
-    }
-
-    #endregion
+   
     #region GameLoop
     public void NewTurn()
     {
