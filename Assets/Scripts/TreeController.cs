@@ -21,7 +21,6 @@ public class TreeController : MonoBehaviour
     {
         if (other.gameObject.layer == 7)
         {
-            print("?");
             transform.GetComponent<MeshRenderer>().enabled = false;
             touchingBuilding = other.transform;
         }

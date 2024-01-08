@@ -5099,6 +5099,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1130120384}
     m_Modifications:
+    - target: {fileID: 2132193720965513763, guid: 1c98578014ea7594fb8b0f03ab56f75e, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2132193720965513763, guid: 1c98578014ea7594fb8b0f03ab56f75e, type: 3}
+      propertyPath: m_Size.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6943449620519154013, guid: 1c98578014ea7594fb8b0f03ab56f75e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5907,6 +5915,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c98578014ea7594fb8b0f03ab56f75e, type: 3}
+--- !u!1 &2089633546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2089633548}
+  - component: {fileID: 2089633547}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2089633547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089633546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b0e23dd39b260647a3897d3bdb27477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnNumber: 0
+  Effects: []
+  Buildings: []
+--- !u!4 &2089633548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089633546}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2093129230 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4734029445471333196, guid: 16f5e9fa610c5c54e9713507691f81d7, type: 3}
@@ -6154,6 +6209,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2444528710403291039, guid: 1a7a055158311dd4cabe95ad701e4a74, type: 3}
+      propertyPath: currentBuilding
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2444528710403291039, guid: 1a7a055158311dd4cabe95ad701e4a74, type: 3}
+      propertyPath: isPlacingBuilding
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2444528710403291039, guid: 1a7a055158311dd4cabe95ad701e4a74, type: 3}
       propertyPath: AllBuildings.Array.data[0]
       value: 
       objectReference: {fileID: 510907976}
@@ -6172,6 +6235,10 @@ PrefabInstance:
     - target: {fileID: 3712223180638088598, guid: 1a7a055158311dd4cabe95ad701e4a74, type: 3}
       propertyPath: m_Name
       value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069086160350116954, guid: 1a7a055158311dd4cabe95ad701e4a74, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: City
       objectReference: {fileID: 0}
     - target: {fileID: 5183270119660485222, guid: 1a7a055158311dd4cabe95ad701e4a74, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6285,3 +6352,4 @@ SceneRoots:
   - {fileID: 1425433063}
   - {fileID: 8500339970785627177}
   - {fileID: 1455804160}
+  - {fileID: 2089633548}

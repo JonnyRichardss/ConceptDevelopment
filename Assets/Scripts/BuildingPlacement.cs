@@ -6,13 +6,12 @@ using UnityEngine.UIElements;
 
 public class BuildingPlacement : MonoBehaviour
 {
-    public bool isPlacingBuilding = true;
+    public bool isPlacingBuilding = false;
     public List<Transform> AllBuildings = new List<Transform>();
     public Transform currentBuilding;
     // Start is called before the first frame update
     void Start()
     {
-        SetCurrentBuilding(0);
     }
 
     // Update is called once per frame
@@ -42,13 +41,13 @@ public class BuildingPlacement : MonoBehaviour
                 currentBuilding = AllBuildings[0].GetChild(GetNextBuilding(AllBuildings[0]));
                 break;
             case 1:
-                currentBuilding = AllBuildings[1].GetChild(GetNextBuilding(AllBuildings[0]));
+                currentBuilding = AllBuildings[1].GetChild(GetNextBuilding(AllBuildings[1]));
                 break;
             case 2:
-                currentBuilding = AllBuildings[2].GetChild(GetNextBuilding(AllBuildings[0]));
+                currentBuilding = AllBuildings[2].GetChild(GetNextBuilding(AllBuildings[2]));
                 break;
             case 3:
-                currentBuilding = AllBuildings[3].GetChild(GetNextBuilding(AllBuildings[0]));
+                currentBuilding = AllBuildings[3].GetChild(GetNextBuilding(AllBuildings[3]));
                 break;
         }
         currentBuilding.gameObject.SetActive(true);
@@ -61,6 +60,7 @@ public class BuildingPlacement : MonoBehaviour
         {
             if (!building.GetChild(i).gameObject.activeSelf)
             {
+                print(building.GetChild(i).gameObject.activeSelf);
                 position = i;
                 break;
             }
@@ -76,6 +76,7 @@ public class BuildingPlacement : MonoBehaviour
             if (currentController.isPlaceable)
             {
                 isPlacingBuilding = false;
+                GameManager.instance.Effects.Add(currentBuilding.GetComponent<BuildingController>().buildingEffect.m_buildingEffect);
                 currentController.isPlaced = true;
                 currentBuilding = null;
             }
