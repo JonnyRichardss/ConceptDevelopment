@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     GameState state;
     public int TurnNumber;
     ResourceHolder Resources; 
-    List<Effect> Effects;
-    List<BuildingScriptable> Buildings;
+    public List<Effect> Effects;
+    public List<BuildingScriptable> Buildings;
     
     Effect TurnSummary;
     

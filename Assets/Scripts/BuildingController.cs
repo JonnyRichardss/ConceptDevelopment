@@ -7,6 +7,9 @@ public class BuildingController : MonoBehaviour
     public bool isPlaceable = true;
     bool overlappingBuilding = false;
     public bool isPlaced = false;
+    public List<BuildingController> neighbours = new List<BuildingController>();
+
+    public BuildingScriptable buildingEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,19 @@ public class BuildingController : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 7)
+        {
+            if (!isPlaced)
+            {
+                transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false; //could change later when models made
+                overlappingBuilding = true;
+                isPlaceable = false;
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.layer == 7)
         {
@@ -71,7 +87,6 @@ public class BuildingController : MonoBehaviour
         {
             return true;
         }
-        print("no");
         return false;
     }
 }
