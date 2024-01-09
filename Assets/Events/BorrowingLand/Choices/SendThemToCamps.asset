@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: SendThemToCamps
   m_EditorClassIdentifier: 
-  m_choiceName: 
-  m_choiceTitle: 
-  m_choiceText: 
+  m_choiceName: Send them to camps
+  m_choiceTitle: Send them to camps
+  m_choiceText: If they don't believe in collective farms then they mustn't be communist.
   m_choiceEffect:
     Duration: 0
-    Food: 0
-    Population: 0
+    Food: 5
+    Population: -5
     Suspicion: 0
-    RepSoviet: 0
-    RepPeople: 0
+    RepSoviet: 2
+    RepPeople: -1

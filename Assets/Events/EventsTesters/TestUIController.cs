@@ -1,13 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class TestUIController : MonoBehaviour
 {
-    public GameManager gameManager;
+    public static TestUIController instance;
 
     public Transform m_event;
     public TextMeshProUGUI m_eventTitle;
@@ -20,10 +22,25 @@ public class TestUIController : MonoBehaviour
     public TextMeshProUGUI m_choiceText;
     public Button m_endButton;
 
+    bool drawingEvents = false;
+    bool isEvent = false;
+
+
+    private void Awake()
+    {
+        //makes sure gamemanager only exists once
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -34,7 +51,7 @@ public class TestUIController : MonoBehaviour
 
     public void SetRandomEventUI()
     {
-        SetEventUI(gameManager.GetComponent<EventTestScript>().Events[Random.Range(0, gameManager.GetComponent<EventTestScript>().Events.Count)]);
+        SetEventUI(GameManager.instance.GetComponent<EventTestScript>().Events[Random.Range(0, GameManager.instance.GetComponent<EventTestScript>().Events.Count)]);
     }
 
     public void SetEventUI(EventScriptable newEvent)
@@ -57,6 +74,30 @@ public class TestUIController : MonoBehaviour
         m_choice.gameObject.SetActive(true);
         m_choiceTitle.text = newChoice.m_choiceName;
         m_choiceText.text = newChoice.m_choiceText;
-        gameManager.ApplyChoice(newChoice);
+        GameManager.instance.ApplyChoice(newChoice);
+    }
+
+    public void SetEvent(bool choice)
+    {
+        isEvent = choice;
+    }
+
+    public void CallDrawEvents(int eventNumber, Action<bool> callback)
+    {
+        StartCoroutine(DrawEventsRoutine(eventNumber, callback));
+    }
+
+    IEnumerator DrawEventsRoutine(int eventNumber, Action<bool> callback)
+    {
+        for (int i = 0; i < eventNumber; i++)
+        {
+            SetRandomEventUI();
+            SetEvent(true);
+            while (isEvent)
+            {
+                yield return new WaitForFixedUpdate();
+            }
+        }
+        callback(true);
     }
 }
