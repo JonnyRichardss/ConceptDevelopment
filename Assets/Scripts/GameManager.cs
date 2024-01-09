@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -95,16 +96,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void DrawEvents()
+    public IEnumerator DrawEvents()
     {
-        for (int RemainingEvents = 4; RemainingEvents == 0; RemainingEvents--)
+        bool isDrawn = false;
+        TestUIController.instance.CallDrawEvents(4, (bool getDrawn) =>
         {
-            EventManager.DrawEvent(Resources);
-            //do more here
-            //probably ApplyChoice()
+            isDrawn = getDrawn;
+        });
+        while (!isDrawn)
+        {
+            yield return new WaitForFixedUpdate();
         }
         AdvanceState();
-        Debug.Log("Event Drawing not implemented yet");
+        Debug.Log("Event Drawing is implemented");
     }
     public void DrawBuildings()
     {
@@ -162,7 +166,8 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.DrawEvents:
                 LoadScene(1);
-                DrawEvents();
+                print("hi");
+                StartCoroutine(DrawEvents());
                 break;
             case GameState.DrawBuildings:
                 LoadScene(2);

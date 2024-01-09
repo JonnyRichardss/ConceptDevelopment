@@ -9,11 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cff9025627c1b41428905ca21e06d79b, type: 3}
+  m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: FineThen
   m_EditorClassIdentifier: 
-  m_eventName: 
-  m_eventTitle: 
-  m_eventText: 
-  m_firstChoice: {fileID: 0}
-  m_secondChoice: {fileID: 0}
+  m_choiceName: Fine Then
+  m_choiceTitle: Fine Then
+  m_choiceText: You give them back their land, the Soviets will not be happy about
+    this one.
+  m_choiceEffect:
+    Duration: 0
+    Food: 0
+    Population: 0
+    Suspicion: 1
+    RepSoviet: -2
+    RepPeople: 3
