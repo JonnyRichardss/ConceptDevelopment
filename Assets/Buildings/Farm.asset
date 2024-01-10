@@ -15,7 +15,7 @@ MonoBehaviour:
   m_buildingName: 
   m_buildingText: 
   m_buildingEffect:
-    Duration: 100000000
+    Duration: -1
     Food: 10
     Population: 0
     Suspicion: 0
