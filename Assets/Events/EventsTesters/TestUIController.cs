@@ -16,6 +16,7 @@ public class TestUIController : MonoBehaviour
     public TextMeshProUGUI m_eventText;
     public Button m_firstButton;
     public Button m_secondButton;
+    public Button m_returnButton;
 
     public Transform m_choice;
     public TextMeshProUGUI m_choiceTitle;
@@ -28,11 +29,9 @@ public class TestUIController : MonoBehaviour
 
     private void Awake()
     {
-        //makes sure gamemanager only exists once
         if (instance != null)
         {
-            Destroy(gameObject);
-            return;
+            Destroy(instance.gameObject);
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
@@ -51,7 +50,7 @@ public class TestUIController : MonoBehaviour
 
     public void SetRandomEventUI()
     {
-        SetEventUI(GameManager.instance.GetComponent<EventTestScript>().Events[Random.Range(0, GameManager.instance.GetComponent<EventTestScript>().Events.Count)]);
+        SetEventUI(transform.GetComponent<EventTestScript>().Events[Random.Range(0, transform.GetComponent<EventTestScript>().Events.Count)]);
     }
 
     public void SetEventUI(EventScriptable newEvent)
@@ -60,12 +59,14 @@ public class TestUIController : MonoBehaviour
         m_choice.gameObject.SetActive(false);
         m_firstButton.onClick.RemoveAllListeners();
         m_secondButton.onClick.RemoveAllListeners();
+        m_returnButton.onClick.RemoveAllListeners();
         m_eventTitle.text = newEvent.m_eventName;
         m_eventText.text = newEvent.m_eventText;
         m_firstButton.GetComponentInChildren<TextMeshProUGUI>().text = newEvent.m_firstChoice.m_choiceName;
         m_firstButton.onClick.AddListener(() => SetChoiceUI(newEvent.m_firstChoice));
         m_secondButton.GetComponentInChildren<TextMeshProUGUI>().text = newEvent.m_secondChoice.m_choiceName;
         m_secondButton.onClick.AddListener(() => SetChoiceUI(newEvent.m_secondChoice));
+        m_returnButton.onClick.AddListener(() => SetEvent(false));
     }
 
     void SetChoiceUI(ChoiceScriptable newChoice)
@@ -74,6 +75,7 @@ public class TestUIController : MonoBehaviour
         m_choice.gameObject.SetActive(true);
         m_choiceTitle.text = newChoice.m_choiceName;
         m_choiceText.text = newChoice.m_choiceText;
+        GameManager.instance.Effects.Add(newChoice.m_choiceEffect);
         GameManager.instance.ApplyChoice(newChoice);
     }
 
@@ -84,6 +86,7 @@ public class TestUIController : MonoBehaviour
 
     public void CallDrawEvents(int eventNumber, Action<bool> callback)
     {
+        print("guh?");
         StartCoroutine(DrawEventsRoutine(eventNumber, callback));
     }
 
