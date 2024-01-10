@@ -2,16 +2,19 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public static int currentSceneIndex;
-    GameState state;
+    public GameState state;
     public int TurnNumber;
     ResourceHolder Resources;
     public List<Effect> Effects;
     public List<BuildingScriptable> Buildings;
+    public bool hasEvents = false;
+    public bool hasBuildings = false;
 
     Effect TurnSummary;
 
@@ -61,10 +64,13 @@ public class GameManager : MonoBehaviour
             ApplyAllEffects(); //apply
             //display summary here
         }
+        hasEvents = false;
+        hasBuildings = false;
         TurnNumber++;
         Debug.Log("Resource Showing not Implemented yet");
 
-        AdvanceState();
+        state = GameState.ShowResources;
+        StartCoroutine(SwitchView());
         //TryNextEvent();
         //turn logging goes in here
     }
@@ -80,7 +86,10 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForFixedUpdate();
         }
-        AdvanceState();
+        //AdvanceState();
+        hasEvents |= true;
+        state = GameState.ShowResources;
+        StartCoroutine(SwitchView());
         Debug.Log("Event Drawing is implemented");
     }
     public IEnumerator DrawBuildings()
@@ -99,7 +108,10 @@ public class GameManager : MonoBehaviour
         //display all
         //place one
         Debug.Log("Building placing is implemented");
-        AdvanceState();
+        //AdvanceState();
+        hasBuildings = true;
+        state = GameState.ShowResources;
+        StartCoroutine(SwitchView());
     }
     #endregion
     #region ApplyEffects
@@ -112,7 +124,11 @@ public class GameManager : MonoBehaviour
             {
                 effectsTemp.Add(effect);
             }
-            TurnSummary += effect;
+            else
+            {
+                TurnSummary -= effect;
+            }
+            //TurnSummary += effect;
         }
         Effects = effectsTemp;
     }
@@ -126,14 +142,36 @@ public class GameManager : MonoBehaviour
     public void ApplyChoice(ChoiceScriptable choice)
     {
         Resources.TryApplyEffect(choice.m_choiceEffect);
-        TurnSummary += choice.m_choiceEffect;
+        //TurnSummary += choice.m_choiceEffect;
+    }
+
+    public void ApplyChoiceChange(Effect choice)
+    {
+        TurnSummary += choice;
+    }
+
+    public void ShowEffects()
+    {
+
+        TextMeshProUGUI resources = GameObject.Find("Resources").GetComponent<TextMeshProUGUI>();
+        resources.text = "Population: " + Resources.Population + " + " + TurnSummary.Population + "\n"
+            + "Food: " + Resources.Food + " + " + TurnSummary.Food + "\n"
+            + "Suspicion: " + Resources.Suspicion + " + " + TurnSummary.Suspicion + "\n"
+            + "People Rep: " + Resources.RepPeople + " + " + TurnSummary.RepPeople + "\n"
+            + "Soviet Rep: " + Resources.RepSoviet + " + " + TurnSummary.RepSoviet;
     }
     #endregion
     #region GameState
     public void LoadScene(int sceneIndex)
     {
         currentSceneIndex = sceneIndex;
+        //StartCoroutine(SwitchView());
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void SwitchScene()
+    {
+        StartCoroutine(SwitchView());
     }
     public void AdvanceState()
     {
@@ -169,8 +207,15 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(DrawBuildings());
                 break;
             case GameState.ShowResources:
-                LoadScene(1);
-                NewTurn();
+                LoadScene(3);
+                yield return new WaitForFixedUpdate();
+                while (SceneManager.GetActiveScene().name != "2. VillageHall")
+                {
+                    print(SceneManager.GetActiveScene().name);
+                    yield return new WaitForFixedUpdate();
+                }
+                ShowEffects();
+                //NewTurn();
                 break;
             default:
                 Debug.Log("GameState hit an invalid value while trying to switch!!!!");

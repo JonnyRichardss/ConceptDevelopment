@@ -6,9 +6,26 @@ using UnityEngine.SceneManagement;
  public class ButtonHandler : MonoBehaviour
 {
     //this script is just used so that the buttons can access gamemanager while its in dontdestroyonload
-     public void LoadScene(int sceneIndex)
+     public void LoadScene(int state)
     {
-        GameManager.instance.LoadScene(sceneIndex);
+        switch (state)
+        {
+            case 0:
+                GameManager.instance.state = GameState.Menu;
+                break;
+            case 1:
+                GameManager.instance.state = GameState.DrawEvents;
+                break;
+            case 2:
+                GameManager.instance.state = GameState.DrawBuildings;
+                break;
+            case 3:
+                GameManager.instance.state = GameState.ShowResources;
+                break;
+            default:
+                break;
+        }
+        GameManager.instance.SwitchScene();
         //indices in buildsettings
         /*
          * 0 - Main Menu
@@ -29,5 +46,10 @@ using UnityEngine.SceneManagement;
     public void EventsButton()
     {
         GameManager.instance.AdvanceState();
+    }
+
+    public void NextTurn()
+    {
+        GameManager.instance.NewTurn();
     }
 }

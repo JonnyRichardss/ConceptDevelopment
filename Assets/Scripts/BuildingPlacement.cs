@@ -24,7 +24,8 @@ public class BuildingPlacement : MonoBehaviour
         //makes sure gamemanager only exists once
         if (instance != null)
         {
-            Destroy(instance.gameObject);
+            Destroy(gameObject);
+            return;
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
@@ -115,6 +116,7 @@ public class BuildingPlacement : MonoBehaviour
             {
                 isPlacingBuilding = false;
                 GameManager.instance.Effects.Add(currentBuilding.GetComponent<BuildingController>().buildingEffect.m_buildingEffect);
+                GameManager.instance.ApplyChoiceChange(currentBuilding.GetComponent<BuildingController>().buildingEffect.m_buildingEffect);
                 currentController.isPlaced = true;
                 currentBuilding = null;
                 callback(true);
@@ -136,10 +138,12 @@ public class BuildingPlacement : MonoBehaviour
     {
         callback = _callback;
         //StartCoroutine(DrawBuildingsRoutine());
+        cards = GameObject.Find("Cards").transform;
         cards.gameObject.SetActive(true);
         for (int i = 0; i < 3; i++)
         {
             int deckChoice = DrawPile[UnityEngine.Random.Range(0, DrawPile.Count)];
+            DrawPile.RemoveAt(deckChoice);
             Transform DrawnBuilding = GetDrawnBuilding(deckChoice);
             Transform currentCard = cards.GetChild(i);
             currentCard.GetComponentInChildren<Button>().onClick.RemoveAllListeners();

@@ -50,6 +50,16 @@ public class ResourceHolder : ILoggable
         RepPeople += e.RepPeople;
         BalanceLogging.Log(this);
     }
+
+    public void RemoveEffect(Effect e)
+    {
+        Food -= e.Food;
+        Population -= e.Population;
+        Suspicion -= e.Suspicion;
+        RepSoviet -= e.RepSoviet;
+        RepPeople -= e.RepPeople;
+        BalanceLogging.Log(this);
+    }
     public bool TryApplyEffect(Effect e)
     {
         if (e.Duration == -1)
