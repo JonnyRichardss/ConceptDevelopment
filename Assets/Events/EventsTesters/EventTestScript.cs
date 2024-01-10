@@ -12,7 +12,7 @@ public class EventTestScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetEvent();
+        //SetEvent();
     }
 
     // Update is called once per frame
@@ -23,6 +23,6 @@ public class EventTestScript : MonoBehaviour
 
     public void SetEvent()
     {
-        UI.GetComponent<TestUIController>().SetEventUI(Events[Random.Range(0, Events.Count)]);
+        transform.GetComponent<TestUIController>().SetEventUI(Events[Random.Range(0, Events.Count)]);
     }
 }

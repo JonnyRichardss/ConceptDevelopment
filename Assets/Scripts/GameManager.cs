@@ -39,7 +39,10 @@ public class GameManager : MonoBehaviour
         Buildings = new List<BuildingScriptable>();
         TurnSummary = new Effect();
         state = GameState.ShowResources;
-        BuildingManager.Reset();
+        if (BuildingPlacement.instance != null)
+        {
+            BuildingPlacement.instance.Refresh();
+        }
         NewTurn();
     }
     public void ExitToMenu()
@@ -61,7 +64,7 @@ public class GameManager : MonoBehaviour
         TurnNumber++;
         Debug.Log("Resource Showing not Implemented yet");
 
-        //AdvanceState();
+        AdvanceState();
         //TryNextEvent();
         //turn logging goes in here
     }
@@ -110,12 +113,22 @@ public class GameManager : MonoBehaviour
         AdvanceState();
         Debug.Log("Event Drawing is implemented");
     }
-    public void DrawBuildings()
+    public IEnumerator DrawBuildings()
     {
-        List<BuildingScriptable> buildings = BuildingManager.DrawBuildings(Resources);
+        bool isPlaced = false;
+        BuildingPlacement.instance.DrawBuildings((bool getPlaced) =>
+        {
+            isPlaced = getPlaced;
+        });
+        while (!isPlaced)
+        {
+            yield return new WaitForFixedUpdate();
+        }
+        print("building placed!");
+        yield return new WaitForSeconds(1f);
         //display all
         //place one
-        Debug.Log("Building placing not implemented");
+        Debug.Log("Building placing is implemented");
         AdvanceState();
     }
     #endregion
@@ -155,9 +168,9 @@ public class GameManager : MonoBehaviour
     public void AdvanceState()
     {
         state = (GameState)(((int)state + 1) % 3);
-        SwitchView();
+        StartCoroutine(SwitchView());
     }
-    public void SwitchView()
+    public IEnumerator SwitchView()
     {
         switch (state)
         {
@@ -166,12 +179,24 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.DrawEvents:
                 LoadScene(1);
+                while (SceneManager.GetActiveScene().name != "JoelsEventScene")
+                {
+                    print(SceneManager.GetActiveScene().name);
+                    yield return new WaitForFixedUpdate();
+                }
+                print(SceneManager.GetActiveScene().name);
                 print("hi");
                 StartCoroutine(DrawEvents());
                 break;
             case GameState.DrawBuildings:
                 LoadScene(2);
-                DrawBuildings();
+                while (SceneManager.GetActiveScene().name != "3. CityView")
+                {
+
+                    yield return new WaitForFixedUpdate();
+                }
+                print("hi");
+                StartCoroutine(DrawBuildings());
                 break;
             case GameState.ShowResources:
                 LoadScene(1);
