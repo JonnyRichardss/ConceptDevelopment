@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour
     public List<BuildingScriptable> Buildings;
     public bool hasEvents = false;
     public bool hasBuildings = false;
-
+    public Text summaryText;
     Effect TurnSummary;
 
     //awake is caleld even if the object is disabled apaprently
@@ -62,7 +63,7 @@ public class GameManager : MonoBehaviour
         {
             AddBuildings(); //add building effects to effects list
             ApplyAllEffects(); //apply
-            //display summary here
+            DisplaySummary();//display summary here
         }
         hasEvents = false;
         hasBuildings = false;
