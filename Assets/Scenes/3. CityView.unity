@@ -6644,6 +6644,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 459397690}
     m_Modifications:
+    - target: {fileID: 2302120689498916003, guid: dde69b8c2ea04fb40966858e0f3af5f1, type: 3}
+      propertyPath: isPlaced
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2800423963420918334, guid: dde69b8c2ea04fb40966858e0f3af5f1, type: 3}
       propertyPath: m_Name
       value: Farm (1)
