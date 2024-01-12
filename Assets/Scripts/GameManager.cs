@@ -149,11 +149,8 @@ public class GameManager : MonoBehaviour
     #region ApplyEffects
     private void ApplyAllEffects()
     {
-        print("mip");
         List<Effect> effectsTemp = new List<Effect>();
-        print(TurnSummary.Food);
-        print(Resources.Population);
-        Resources.TryApplyEffect(new Effect(0, 90 - Resources.Population, 0, 0, 0, 0));
+        Resources.TryApplyEffect(new Effect(0, StartValues.Food - Resources.Population, 0, 0, 0, 0));
         //Resources.TryApplyEffect(TurnSummary);
         foreach (Effect effect in Effects)
         {
@@ -231,7 +228,6 @@ public class GameManager : MonoBehaviour
                     yield return new WaitForFixedUpdate();
                 }
                 print(SceneManager.GetActiveScene().name);
-                print("hi");
                 StartCoroutine(DrawEvents());
                 break;
             case GameState.DrawBuildings:
@@ -241,7 +237,6 @@ public class GameManager : MonoBehaviour
 
                     yield return new WaitForFixedUpdate();
                 }
-                print("hi");
                 StartCoroutine(DrawBuildings());
                 break;
             case GameState.ShowResources:
