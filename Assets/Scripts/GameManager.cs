@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.UI;
 using static GameManager;
 
 public class GameManager : MonoBehaviour
@@ -18,7 +19,7 @@ public class GameManager : MonoBehaviour
     public bool hasBuildings = false;
     public enum EndReason { allGone, allStarved, suspicion, noPeopleRep, noSovietRep }
     public EndReason endReason;
-
+    Text SummaryText;
     Effect StartValues;
     Effect TurnSummary;
 
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
         {
             //AddBuildings(); //add building effects to effects list
             ApplyAllEffects(); //apply
-            //display summary here
+            DisplaySummary();//display summary here
         }
         if (CheckEndGame())
         {
