@@ -115,6 +115,7 @@ public class BuildingPlacement : MonoBehaviour
             if (currentController.isPlaceable)
             {
                 isPlacingBuilding = false;
+                print("hoi");
                 GameManager.instance.Effects.Add(currentBuilding.GetComponent<BuildingController>().buildingEffect.m_buildingEffect);
                 GameManager.instance.ApplyChoiceChange(currentBuilding.GetComponent<BuildingController>().buildingEffect.m_buildingEffect);
                 currentController.isPlaced = true;
