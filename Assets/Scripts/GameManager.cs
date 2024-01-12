@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public bool hasEvents = false;
     public bool hasBuildings = false;
 
+    Effect StartValues;
     Effect TurnSummary;
 
     //awake is caleld even if the object is disabled apaprently
@@ -40,7 +41,8 @@ public class GameManager : MonoBehaviour
         Resources = new ResourceHolder(100f, 100f, 0f, 0, 0);
         Effects = new List<Effect>();
         Buildings = new List<BuildingScriptable>();
-        TurnSummary = new Effect();
+        StartValues = new Effect(0, 90, 0, 0, 0, 0);
+        TurnSummary = StartValues;
         state = GameState.ShowResources;
         if (BuildingPlacement.instance != null)
         {
@@ -58,9 +60,9 @@ public class GameManager : MonoBehaviour
     #region GameLoop
     public void NewTurn()
     {
-        if(TurnNumber != 0)
+        if (TurnNumber != 0)
         {
-            AddBuildings(); //add building effects to effects list
+            //AddBuildings(); //add building effects to effects list
             ApplyAllEffects(); //apply
             //display summary here
         }
@@ -117,7 +119,12 @@ public class GameManager : MonoBehaviour
     #region ApplyEffects
     private void ApplyAllEffects()
     {
+        print("mip");
         List<Effect> effectsTemp = new List<Effect>();
+        print(TurnSummary.Food);
+        print(Resources.Population);
+        Resources.TryApplyEffect(new Effect(0, 90 - Resources.Population, 0, 0, 0, 0));
+        //Resources.TryApplyEffect(TurnSummary);
         foreach (Effect effect in Effects)
         {
             if (Resources.TryApplyEffect(effect))
@@ -136,6 +143,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (BuildingScriptable b in Buildings)
         {
+            ApplyChoiceChange(b.m_buildingEffect);
             Effects.Add(b.m_buildingEffect);
         }
     }
@@ -155,7 +163,7 @@ public class GameManager : MonoBehaviour
 
         TextMeshProUGUI resources = GameObject.Find("Resources").GetComponent<TextMeshProUGUI>();
         resources.text = "Population: " + Resources.Population + " + " + TurnSummary.Population + "\n"
-            + "Food: " + Resources.Food + " + " + TurnSummary.Food + "\n"
+            + "Food: " + Resources.Food + " + " + TurnSummary.Food + " - " + Resources.Population + "\n"
             + "Suspicion: " + Resources.Suspicion + " + " + TurnSummary.Suspicion + "\n"
             + "People Rep: " + Resources.RepPeople + " + " + TurnSummary.RepPeople + "\n"
             + "Soviet Rep: " + Resources.RepSoviet + " + " + TurnSummary.RepSoviet;

@@ -44,7 +44,8 @@ public class WindmillController : MonoBehaviour
             {
                 building.neighbours.Add(newFarms[i]);
                 newFarms.RemoveAt(i);
-                GameManager.instance.Effects.Add(new Effect(0, 5, 0, 0, 0, 0));
+                GameManager.instance.ApplyChoiceChange(new Effect(-1, 5, 0, 0, 0, 0));
+                GameManager.instance.Effects.Add(new Effect(-1, 5, 0, 0, 0, 0));
                 print(building.buildingEffect.m_buildingEffect.Food);
             }
         }
