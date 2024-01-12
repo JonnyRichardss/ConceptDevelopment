@@ -22,6 +22,9 @@ using UnityEngine.SceneManagement;
             case 3:
                 GameManager.instance.state = GameState.ShowResources;
                 break;
+            case 4:
+                GameManager.instance.state = GameState.EndGame;
+                break;
             default:
                 break;
         }
