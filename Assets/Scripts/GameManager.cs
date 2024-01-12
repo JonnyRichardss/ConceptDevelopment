@@ -112,8 +112,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Building placing is implemented");
         //AdvanceState();
         hasBuildings = true;
-        state = GameState.ShowResources;
-        StartCoroutine(SwitchView());
+        //state = GameState.ShowResources;
+        //StartCoroutine(SwitchView());
     }
     #endregion
     #region ApplyEffects
