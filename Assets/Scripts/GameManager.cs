@@ -55,16 +55,16 @@ public class GameManager : MonoBehaviour
     private void DisplaySummary()
     {
         //Canvas with a Text UI element named "SummaryText"
-        if (summaryText != null)
+        if (SummaryText != null)
         {
             // Customize this message based on the summary you want to display
             string summaryMessage = $"Turn {TurnNumber} summary:\nBuildings added, effects applied.";
 
             // Set the text of the UI element
-            summaryText.text = summaryMessage;
+            SummaryText.text = summaryMessage;
 
             // Activate the Canvas or show the pop-up
-            summaryText.gameObject.SetActive(true);
+            SummaryText.gameObject.SetActive(true);
 
             //Coroutine or a timer to hide the pop-up after some time
             StartCoroutine(HideSummaryAfterDelay(3f)); // Hide after 3 seconds (adjust as needed)
@@ -76,10 +76,10 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         //Canvas with a Text UI element named "SummaryText"
-        if (summaryText != null)
+        if (SummaryText != null)
         {
             //Hide the pop-up
-            summaryText.gameObject.SetActive(false);
+            SummaryText.gameObject.SetActive(false);
         }
     }
 
