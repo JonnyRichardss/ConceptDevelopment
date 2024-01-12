@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using static GameManager;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
     public List<BuildingScriptable> Buildings;
     public bool hasEvents = false;
     public bool hasBuildings = false;
+    public enum EndReason { allGone, allStarved, suspicion, noPeopleRep, noSovietRep }
+    public EndReason endReason;
 
     Effect StartValues;
     Effect TurnSummary;
@@ -66,6 +69,10 @@ public class GameManager : MonoBehaviour
             ApplyAllEffects(); //apply
             //display summary here
         }
+        if (CheckEndGame())
+        {
+            return;
+        }
         hasEvents = false;
         hasBuildings = false;
         TurnNumber++;
@@ -75,6 +82,43 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SwitchView());
         //TryNextEvent();
         //turn logging goes in here
+    }
+
+    bool CheckEndGame()
+    {
+        bool end = false;
+        if (Resources.Population <= 0) 
+        {
+            endReason = EndReason.allGone;
+            end = true;
+        }
+        else if (Resources.Food < -50)
+        {
+            endReason = EndReason.allStarved;
+            end = true;
+        }
+        else if (Resources.Suspicion == 10)
+        {
+            endReason = EndReason.suspicion;
+            end = true;
+        }
+        else if (Resources.RepSoviet >= 10 || Resources.RepPeople <= -10)
+        {
+            endReason = EndReason.noPeopleRep;
+            end = true;
+        }
+        else if (Resources.RepSoviet <= -10 || Resources.RepPeople >= 10)
+        {
+            endReason = EndReason.noSovietRep;
+            end = true;
+        }
+        if (end)
+        {
+            print("die");
+            state = GameState.EndGame;
+            StartCoroutine(SwitchView());
+        }
+        return end;
     }
 
     public IEnumerator DrawEvents()
@@ -106,12 +150,12 @@ public class GameManager : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         print("building placed!");
-        yield return new WaitForSeconds(1f);
+        hasBuildings = true;
+        //yield return new WaitForSeconds(1f);
         //display all
         //place one
         Debug.Log("Building placing is implemented");
         //AdvanceState();
-        hasBuildings = true;
         //state = GameState.ShowResources;
         //StartCoroutine(SwitchView());
     }
@@ -219,6 +263,15 @@ public class GameManager : MonoBehaviour
                 }
                 ShowEffects();
                 //NewTurn();
+                break;
+            case GameState.EndGame:
+                print("mip");
+                LoadScene(5);
+                while (SceneManager.GetActiveScene().name != "EndScene")
+                {
+                    print(SceneManager.GetActiveScene().name);
+                    yield return new WaitForFixedUpdate();
+                }
                 break;
             default:
                 Debug.Log("GameState hit an invalid value while trying to switch!!!!");

@@ -132,7 +132,7 @@ public class BuildingPlacement : MonoBehaviour
     public void Refresh()
     {
         DiscardPile.Clear();
-        DrawPile = NewDrawPile;
+        DrawPile = new List<int>(NewDrawPile);
     }
 
     public void DrawBuildings(Action<bool> _callback)
@@ -141,6 +141,10 @@ public class BuildingPlacement : MonoBehaviour
         //StartCoroutine(DrawBuildingsRoutine());
         cards = GameObject.Find("Cards").transform;
         cards.gameObject.SetActive(true);
+        if (DrawPile.Count <= 3)
+        {
+            Refresh();
+        }
         for (int i = 0; i < 3; i++)
         {
             int deckChoice = DrawPile[UnityEngine.Random.Range(0, DrawPile.Count)];
