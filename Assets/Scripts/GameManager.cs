@@ -9,33 +9,24 @@ using static GameManager;
 public class GameManager : MonoBehaviour
 {
     ResourceHolder Resources; 
-    List<Effect> Effects;
+    public List<Effect> Effects;
     List<BuildingScriptable> Buildings;
-    GameState state;
+    public GameState state;
     public static GameManager instance;
     public static int currentSceneIndex;
-    public GameState state;
     public int TurnNumber;
-    ResourceHolder Resources;
-    public List<Effect> Effects;
-    public List<BuildingScriptable> Buildings;
     public bool hasEvents = false;
     public bool hasBuildings = false;
     public enum EndReason { allGone, allStarved, suspicion, noPeopleRep, noSovietRep }
     public EndReason endReason;
-    Text summaryText;
+    Text SummaryText;
     Effect StartValues;
     Effect TurnSummary;
-
-    public FoodStash foodStash;
 
     public Sprite upArrow;
     public Sprite downArrow;
     public Sprite noChange;//change
 
-    Effect TurnSummary;
-    // Start is called before the first frame update
-    void Start()
     //awake is caleld even if the object is disabled apaprently
     private void Awake()
     {
