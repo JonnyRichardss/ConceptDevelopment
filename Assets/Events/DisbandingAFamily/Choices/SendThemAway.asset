@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: SendThemAway
   m_EditorClassIdentifier: 
-  m_choiceName: Send them away
-  m_choiceTitle: Send them away
-  m_choiceText: The family is sent away, but at least they are together.
+  m_choiceName: Send them away together
+  m_choiceTitle: Send them away together
+  m_choiceText: The family is sent away, but at least they are together, increasing
+    food and decreasing population.
   m_choiceEffect:
     Duration: 0
     Food: 10

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: What more can I do?
   m_choiceTitle: What more can I do?
-  m_choiceText: It can't be helped, people will die from this, including children.
+  m_choiceText: It can't be helped, people will die from this, including children,
+    decreasing the population over time.
   m_choiceEffect:
     Duration: 4
     Food: 0

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: PoisonedDogChoice1
   m_EditorClassIdentifier: 
   m_choiceName: Find the culprit
-  m_choiceTitle: 
-  m_choiceText: You imprison the person who poisoned the dog.
+  m_choiceTitle: Find the culprit
+  m_choiceText: You imprison the person who poisoned the dog, decreasing food and
+    population.
   m_choiceEffect:
     Duration: 0
     Food: -2

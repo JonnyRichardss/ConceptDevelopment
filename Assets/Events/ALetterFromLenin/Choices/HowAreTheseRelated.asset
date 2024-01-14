@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: HowAreTheseRelated
   m_EditorClassIdentifier: 
-  m_choiceName: How are these related?
-  m_choiceTitle: How are these related?
+  m_choiceName: Disagree against the Soviets
+  m_choiceTitle: Disagree against the Soviets
   m_choiceText: Why would people dying in the streets be solved by stealing from
-    the church?
+    the church? Your reputation goes down with the Soviets but up with the people.
   m_choiceEffect:
     Duration: 0
     Food: 0

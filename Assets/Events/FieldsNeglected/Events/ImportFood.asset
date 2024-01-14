@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: ImportFood
   m_EditorClassIdentifier: 
-  m_choiceName: Import food
-  m_choiceTitle: Import food
-  m_choiceText: You import to food from Odessa, it will take time to arrive.
+  m_choiceName: Import food over time
+  m_choiceTitle: Import food over time
+  m_choiceText: You import to food from Odessa, increasing food over time but decreasing
+    Soviet reputation.
   m_choiceEffect:
     Duration: 3
     Food: 5

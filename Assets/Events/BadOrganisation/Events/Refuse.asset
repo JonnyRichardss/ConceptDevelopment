@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: Refuse
   m_EditorClassIdentifier: 
-  m_choiceName: Refuse
-  m_choiceTitle: Refuse
-  m_choiceText: You refuse to pay the tax, the Soviets are not pleased
+  m_choiceName: Refuse the Soviets
+  m_choiceTitle: Refuse the Soviets
+  m_choiceText: You refuse to pay the tax, the Soviets are not pleased but the people
+    like it.
   m_choiceEffect:
     Duration: 0
     Food: 0

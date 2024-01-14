@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: SuppressTheChurch
   m_EditorClassIdentifier: 
-  m_choiceName: 'Suppress the church '
-  m_choiceTitle: 'Suppress the church '
-  m_choiceText: The churches become abandoned and people don't like it.
+  m_choiceName: Agree with the Soviets
+  m_choiceTitle: Agree with the Soviets
+  m_choiceText: The churches become abandoned and people don't like it. Reducing
+    population and people reputation.
   m_choiceEffect:
     Duration: 0
     Food: 0

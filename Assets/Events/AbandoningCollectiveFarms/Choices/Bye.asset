@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: Bye
   m_EditorClassIdentifier: 
-  m_choiceName: Bye
-  m_choiceTitle: Bye
-  m_choiceText: People abandon your farms
+  m_choiceName: Let them leave
+  m_choiceTitle: Let them leave
+  m_choiceText: People abandon your farms, losing food and population.
   m_choiceEffect:
     Duration: 5
     Food: -3

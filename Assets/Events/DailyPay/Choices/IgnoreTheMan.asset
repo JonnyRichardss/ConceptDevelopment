@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: Ignore the man
   m_choiceTitle: Ignore the man
-  m_choiceText: people begin starving and losing heart
+  m_choiceText: people begin starving and losing heart, decreasing food, population
+    and people rep.
   m_choiceEffect:
     Duration: 0
     Food: -3

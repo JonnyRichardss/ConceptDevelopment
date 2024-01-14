@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: IfYouKillYouDie
   m_EditorClassIdentifier: 
-  m_choiceName: "If you kill you\u2019ll also die!"
-  m_choiceTitle: "If you kill you\u2019ll also die!"
-  m_choiceText: You make sure to let the population know what happens to cannibals.
+  m_choiceName: Kill the cannibals.
+  m_choiceTitle: Kill the cannibals.
+  m_choiceText: You make sure to let the population know what happens to cannibals,
+    decreasing population.
   m_choiceEffect:
     Duration: 0
     Food: 0

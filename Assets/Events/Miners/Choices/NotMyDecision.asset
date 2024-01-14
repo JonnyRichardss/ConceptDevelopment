@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: "It\u2019s not my decision"
   m_choiceTitle: "It\u2019s not my decision"
-  m_choiceText: You don't have that kind of power, it's not for you to decide.
+  m_choiceText: You don't have that kind of power, it's not for you to decide, decreasing
+    people rep a lot.
   m_choiceEffect:
     Duration: 0
     Food: 0

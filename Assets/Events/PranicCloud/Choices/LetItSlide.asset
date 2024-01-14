@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: LetItSlide
   m_EditorClassIdentifier: 
-  m_choiceName: Let it slide
-  m_choiceTitle: Let it slide
-  m_choiceText: The authorities won't be happy with this, well, your betters.
+  m_choiceName: Don't punish the attack.
+  m_choiceTitle: Don't punish the attack.
+  m_choiceText: The authorities won't be happy with this, decreasing soviet reputation,
+    increasing people reputation.
   m_choiceEffect:
     Duration: 0
     Food: 0

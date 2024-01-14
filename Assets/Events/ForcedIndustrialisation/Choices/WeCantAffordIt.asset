@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: "We can\u2019t afford it"
   m_choiceTitle: "We can\u2019t afford it"
-  m_choiceText: The USSR doesn't like your lack of commitment.
+  m_choiceText: The USSR doesn't like your lack of commitment, decreasing Soviet
+    rep a lot.
   m_choiceEffect:
     Duration: 0
     Food: 0

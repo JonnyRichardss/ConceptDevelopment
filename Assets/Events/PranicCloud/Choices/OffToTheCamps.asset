@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: Off to the camps!
   m_choiceTitle: Off to the camps!
-  m_choiceText: You send the women to the camps, this is no way to treat your betters.
+  m_choiceText: You send the women to the camps, this is no way to treat your betters,
+    decreasing population and suspicion and increasing Soviet reputation.
   m_choiceEffect:
     Duration: 0
     Food: 0

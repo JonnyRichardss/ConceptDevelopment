@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: ThingsWillChange
   m_EditorClassIdentifier: 
-  m_choiceName: Things will change
-  m_choiceTitle: Things will change
-  m_choiceText: You do nothing and hope, as long as the Soviets don't find out.
+  m_choiceName: Do nothing
+  m_choiceTitle: Do nothing
+  m_choiceText: You do nothing and hope, as long as the Soviets don't find out, the
+    people don't like it.
   m_choiceEffect:
     Duration: 0
     Food: 0

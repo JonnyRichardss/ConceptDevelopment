@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: SureJustHaveIt
   m_EditorClassIdentifier: 
-  m_choiceName: Sure just have it
-  m_choiceTitle: Sure just have it
+  m_choiceName: Sure just have the food
+  m_choiceTitle: Sure just have the food
   m_choiceText: You give the peasants what they want and they feel heard, it improves
-    their mood.
+    their mood but decreases food.
   m_choiceEffect:
     Duration: 2
     Food: -5

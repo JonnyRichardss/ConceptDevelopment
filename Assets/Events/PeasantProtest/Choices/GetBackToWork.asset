@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: 'Get back to work! '
   m_choiceTitle: 'Get back to work! '
-  m_choiceText: Some people get ack to work, it increases your production but the
-    people don't like it.
+  m_choiceText: Some people get ack to work, it increases your food and Soviet rep,
+    but the people don't like it.
   m_choiceEffect:
     Duration: 2
     Food: 5

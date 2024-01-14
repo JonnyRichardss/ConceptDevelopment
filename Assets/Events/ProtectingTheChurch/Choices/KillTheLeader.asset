@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: Kill the leader
   m_choiceTitle: Kill the leader
-  m_choiceText: without their leader they will fall
+  m_choiceText: without their leader they will fall, decreasing food, population
+    and people reputation over a short time.
   m_choiceEffect:
-    Duration: 10
+    Duration: 2
     Food: -2
     Population: -2
     Suspicion: 0

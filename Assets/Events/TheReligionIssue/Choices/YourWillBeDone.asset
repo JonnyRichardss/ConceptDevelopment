@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: Your will be done
   m_choiceTitle: Your will be done
-  m_choiceText: You shoot the clergy as you've been told.
+  m_choiceText: You shoot the clergy as you've been told, decreasing population,
+    suspicion and people reputation and increasing Soviet reputation.
   m_choiceEffect:
     Duration: 0
     Food: 0

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: Send them to camps
   m_choiceTitle: Send them to camps
-  m_choiceText: If they don't believe in collective farms then they mustn't be communist.
+  m_choiceText: If they don't believe in collective farms then they mustn't be communist,
+    increasing food and Soviet rep, but decreasing population and people rep.
   m_choiceEffect:
     Duration: 0
     Food: 5

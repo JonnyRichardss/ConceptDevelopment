@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: ThatSeemsWrong
   m_EditorClassIdentifier: 
-  m_choiceName: That seems wrong
-  m_choiceTitle: That seems wrong
-  m_choiceText: The Soviets don't like you working against the system.
+  m_choiceName: Let people practice religion.
+  m_choiceTitle: Let people practice religion.
+  m_choiceText: The Soviets don't like you working against the system, increasing
+    suspicion and decreasing Soviet reputation.
   m_choiceEffect:
     Duration: 0
     Food: 0

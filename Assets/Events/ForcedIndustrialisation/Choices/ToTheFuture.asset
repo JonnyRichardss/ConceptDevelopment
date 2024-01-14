@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: ToTheFuture
   m_EditorClassIdentifier: 
-  m_choiceName: To the future!
-  m_choiceTitle: To the future!
-  m_choiceText: you create a new industrial building
+  m_choiceName: Create a building
+  m_choiceTitle: Create a building
+  m_choiceText: you create a new industrial building, decreasing food and population
+    over time for the increased production.
   m_choiceEffect:
     Duration: 5
     Food: -2

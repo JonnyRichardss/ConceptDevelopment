@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: FeedThem
   m_EditorClassIdentifier: 
-  m_choiceName: Feed them?
-  m_choiceTitle: Feed them?
+  m_choiceName: Food will keep them happy
+  m_choiceTitle: Food will keep them happy
   m_choiceText: You feed the people the food they need, it will take time for them
-    to be satisfied.
+    to be satisfied, decreasing food but making them happy.
   m_choiceEffect:
     Duration: 5
     Food: -3

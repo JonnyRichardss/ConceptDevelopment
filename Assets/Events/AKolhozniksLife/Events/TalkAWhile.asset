@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: TalkAWhile
   m_EditorClassIdentifier: 
-  m_choiceName: Talk a while
-  m_choiceTitle: Talk a while
+  m_choiceName: Talk to the farmers
+  m_choiceTitle: Talk to the farmers
   m_choiceText: You spend the evening talking, they are nice people, it's a shame
-    they are in this situation.
+    they are in this situation. You gain people reputation.
   m_choiceEffect:
     Duration: 0
     Food: 0

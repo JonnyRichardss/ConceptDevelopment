@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: Increase pay of the town
   m_choiceTitle: Increase pay of the town
-  m_choiceText: His pay is increased, the Soviets won't be happy.
+  m_choiceText: His pay is increased, the Soviets won't be happy, decreasing population
+    and soviet reputation, but increasing people reputation, over time.
   m_choiceEffect:
     Duration: 5
     Food: -3
