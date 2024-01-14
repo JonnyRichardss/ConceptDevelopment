@@ -55,4 +55,9 @@ using UnityEngine.SceneManagement;
     {
         GameManager.instance.NewTurn();
     }
+
+    public void RevealElement(Transform element)
+    {
+        element.gameObject.SetActive(!element.gameObject.activeSelf);
+    }
 }
