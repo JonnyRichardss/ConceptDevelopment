@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public bool hasBuildings = false;
     public enum EndReason { allGone, allStarved, suspicion, noPeopleRep, noSovietRep }
     public EndReason endReason;
-    Text SummaryText;
+    Text summaryText;
     Effect StartValues;
     Effect TurnSummary;
 
