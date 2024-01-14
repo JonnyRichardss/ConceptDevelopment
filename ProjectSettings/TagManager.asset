@@ -3,6 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+  tags: []
+  tags:
+  - Farm
+  - Collective Farms
+  - Food Stash
+  - Propaganda House
+  - Rebel Outpost
+  - Secret Libary
+  - House
+  - Orphanage
+  - Windmill
   tags:
   - Farm
   layers:
