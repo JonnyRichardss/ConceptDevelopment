@@ -71,6 +71,21 @@ public class BuildingPlacement : MonoBehaviour
             case 3:
                 currentBuilding = AllBuildings[3].GetChild(GetNextBuilding(AllBuildings[3]));
                 break;
+            case 4:
+                currentBuilding = AllBuildings[4].GetChild(GetNextBuilding(AllBuildings[4]));
+                break;
+            case 5:
+                currentBuilding = AllBuildings[5].GetChild(GetNextBuilding(AllBuildings[5]));
+                break;
+            case 6:
+                currentBuilding = AllBuildings[6].GetChild(GetNextBuilding(AllBuildings[6]));
+                break;
+            case 7:
+                currentBuilding = AllBuildings[7].GetChild(GetNextBuilding(AllBuildings[7]));
+                break;
+            case 8:
+                currentBuilding = AllBuildings[8].GetChild(GetNextBuilding(AllBuildings[8]));
+                break;
         }
         currentBuilding.gameObject.SetActive(true);
         cards.gameObject.SetActive(false);
@@ -88,6 +103,16 @@ public class BuildingPlacement : MonoBehaviour
                 return AllBuildings[2].GetChild(GetNextBuilding(AllBuildings[2]));
             case 3:
                 return AllBuildings[3].GetChild(GetNextBuilding(AllBuildings[3]));
+            case 4:
+                return AllBuildings[4].GetChild(GetNextBuilding(AllBuildings[4]));
+            case 5:
+                return AllBuildings[5].GetChild(GetNextBuilding(AllBuildings[5]));
+            case 6:
+                return AllBuildings[6].GetChild(GetNextBuilding(AllBuildings[6]));
+            case 7:
+                return AllBuildings[7].GetChild(GetNextBuilding(AllBuildings[7]));
+            case 8:
+                return AllBuildings[8].GetChild(GetNextBuilding(AllBuildings[8]));
             default: return null;
         }
     }
