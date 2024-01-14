@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     Effect StartValues;
     Effect TurnSummary;
 
+    public FoodStash foodStash;
+
     public Sprite upArrow;
     public Sprite downArrow;
     public Sprite noChange;
@@ -410,3 +412,12 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 }
+
+//void Start()
+//{
+//    
+//    foodStash.DepositFood(10);
+//    foodStash.WithdrawFood(5);
+//    int currentFood = foodStash.GetCurrentFoodAmount();
+//    Debug.Log("Current food in stash: " + currentFood);
+//}
