@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: OurGreatLeader
   m_EditorClassIdentifier: 
-  m_choiceName: Our great Leader!
-  m_choiceTitle: Our great Leader!
-  m_choiceText: It is evident that these collective farms have improved all our lives.
+  m_choiceName: Collective Farms are great!
+  m_choiceTitle: Collective Farms are great!
+  m_choiceText: It is evident that these collective farms have improved all our lives,
+    increasing Soviet reputation.
   m_choiceEffect:
     Duration: 0
     Food: 0

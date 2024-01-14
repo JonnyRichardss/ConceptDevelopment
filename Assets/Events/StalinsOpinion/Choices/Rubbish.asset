@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: Rubbish
   m_EditorClassIdentifier: 
-  m_choiceName: Rubbish
-  m_choiceTitle: Rubbish
+  m_choiceName: Collective farms are bad.
+  m_choiceTitle: Collective farms are bad.
   m_choiceText: This 'opinion' is not based on facts but merely used to boost Stalins
-    own political power.
+    own political power, increasing people reputation.
   m_choiceEffect:
     Duration: 0
     Food: 0

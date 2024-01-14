@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: PoisonedDogChoice2
   m_EditorClassIdentifier: 
   m_choiceName: Suits Me
-  m_choiceTitle: 
-  m_choiceText: You allow the man to eat the dog
+  m_choiceTitle: Suits Me
+  m_choiceText: You allow the man to eat the dog, increasing food but decreasing
+    people reputation.
   m_choiceEffect:
     Duration: 0
     Food: 1

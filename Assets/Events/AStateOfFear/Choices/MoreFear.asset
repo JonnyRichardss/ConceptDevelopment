@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: MoreFear
   m_EditorClassIdentifier: 
-  m_choiceName: More fear
-  m_choiceTitle: More fear
-  m_choiceText: Complete hopelessness will prevent more problems in the future
+  m_choiceName: Fear keeps them obedient
+  m_choiceTitle: Fear keeps them obedient
+  m_choiceText: Complete hopelessness will prevent more problems in the future, decreasing
+    population but increasing Soviet reputation.
   m_choiceEffect:
     Duration: 4
     Food: 0

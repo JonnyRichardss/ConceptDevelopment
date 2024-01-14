@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: IllDoAnything
   m_EditorClassIdentifier: 
-  m_choiceName: "I\u2019ll do anything please"
-  m_choiceTitle: "I\u2019ll do anything please"
-  m_choiceText: You beg the people and allow them to take what they want.
+  m_choiceName: Take the food!
+  m_choiceTitle: Take the food!
+  m_choiceText: You beg the people and allow them to take what they want. Food is
+    decreased over a long time but people reputatio also increases.
   m_choiceEffect:
     Duration: 10
     Food: -10

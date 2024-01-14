@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: BackToWork
   m_EditorClassIdentifier: 
-  m_choiceName: Back to work!
-  m_choiceTitle: Back to work!
-  m_choiceText: You order people back to work, some agree.
+  m_choiceName: Force them back to work
+  m_choiceTitle: Force them back to work
+  m_choiceText: You order people back to work, some agree, increasing food but decreasing
+    population, suspicion and people reputation.
   m_choiceEffect:
     Duration: 0
     Food: 5

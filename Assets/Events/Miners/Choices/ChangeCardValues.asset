@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: Change the card values
   m_choiceTitle: Change the card values
-  m_choiceText: You change the values of the cards, increasing production but decreasing
-    food.
+  m_choiceText: You change the values of the cards, decreasing food but increasing
+    people and soviet reputation.
   m_choiceEffect:
     Duration: 5
     Food: -5

@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: TheLocalRulersUnderstand
   m_EditorClassIdentifier: 
   m_choiceName: The local rulers understand
-  m_choiceTitle: 
-  m_choiceText: 
+  m_choiceTitle: The local rulers understand
+  m_choiceText: You give the people food and a rest, they like you a bit more, decreasing
+    food but increasing suspicion and people reputation.
   m_choiceEffect:
     Duration: 0
-    Food: 0
+    Food: -10
     Population: 0
     Suspicion: 1
     RepSoviet: 0

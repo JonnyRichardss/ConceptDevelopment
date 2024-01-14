@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: Take the chickens
   m_choiceTitle: Take the chickens
-  m_choiceText: You take their chickens, they won't like it but at least it's food.
+  m_choiceText: You take their chickens, people won't like it but at least it's food.
   m_choiceEffect:
     Duration: 0
     Food: 15

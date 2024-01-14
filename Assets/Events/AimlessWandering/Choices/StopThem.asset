@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: StopThem
   m_EditorClassIdentifier: 
-  m_choiceName: Stop them
-  m_choiceTitle: Stop them
+  m_choiceName: Stop the movement
+  m_choiceTitle: Stop the movement
   m_choiceText: People may feel resentment but the Soviet Union appreciates your
     action.
   m_choiceEffect:

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: Take Everything
   m_choiceTitle: Take Everything
-  m_choiceText: You find as much as you can, despite the cries of the people.
+  m_choiceText: You find as much as you can, despite the cries of the people, increasing
+    food but drecreasing population and people reputation over time.
   m_choiceEffect:
     Duration: 3
     Food: 10

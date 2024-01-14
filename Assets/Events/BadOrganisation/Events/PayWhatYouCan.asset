@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: PayWhatYouCan
   m_EditorClassIdentifier: 
-  m_choiceName: Pay what you can
-  m_choiceTitle: Pay what you can
-  m_choiceText: You pay the food for the tax, it has a negative effect on the people.
+  m_choiceName: Give Soviets the tax
+  m_choiceTitle: Give Soviets the tax
+  m_choiceText: You pay the food for the tax, removing a lot of your stocks.
   m_choiceEffect:
     Duration: 0
     Food: -15

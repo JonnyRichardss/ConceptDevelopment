@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: "This isn\u2019t food"
   m_choiceTitle: "This isn\u2019t food"
-  m_choiceText: You can't eat this grass, it's raw.
+  m_choiceText: You can't eat this grass, it's raw. someone dies of hunger.
   m_choiceEffect:
     Duration: 0
     Food: 0
-    Population: 0
+    Population: -1
     Suspicion: 0
     RepSoviet: 0
     RepPeople: 0

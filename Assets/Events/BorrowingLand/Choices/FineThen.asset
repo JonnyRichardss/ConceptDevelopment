@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: FineThen
   m_EditorClassIdentifier: 
-  m_choiceName: Fine Then
-  m_choiceTitle: Fine Then
-  m_choiceText: You give them back their land, the Soviets will not be happy about
-    this one.
+  m_choiceName: Give the people the land
+  m_choiceTitle: Give the people the land
+  m_choiceText: You give them back their land, the Soviets and Stalin will not be
+    happy about this one but the people really like it.
   m_choiceEffect:
     Duration: 0
     Food: 0

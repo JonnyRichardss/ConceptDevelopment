@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: SpreadFear
   m_EditorClassIdentifier: 
-  m_choiceName: Spread fear
-  m_choiceTitle: Spread fear
-  m_choiceText: You spread fear about the rebellion and their intentions.
+  m_choiceName: Fight against the rebellion
+  m_choiceTitle: Fight against the rebellion
+  m_choiceText: You spread fear about the rebellion and their intentions. Decreasing
+    population and people rep but increases Soviet rep.
   m_choiceEffect:
     Duration: 0
     Food: 0

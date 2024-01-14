@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: BolsterTheGrainSupply
   m_EditorClassIdentifier: 
-  m_choiceName: Bolster the grain supply
-  m_choiceTitle: Bolster the grain supply
-  m_choiceText: You give children extra food fron the supply.
+  m_choiceName: Give food to the children
+  m_choiceTitle: Give food to the children
+  m_choiceText: You give children extra food fron the supply and people liked that,
+    decreasing food and increasing people rep.
   m_choiceEffect:
     Duration: 0
     Food: -5

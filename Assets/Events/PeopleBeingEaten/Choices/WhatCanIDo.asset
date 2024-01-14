@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: WhatCanIDo
   m_EditorClassIdentifier: 
-  m_choiceName: What can I do?
-  m_choiceTitle: What can I do?
-  m_choiceText: You can't take down cannibals!?
+  m_choiceName: Allow the cannibals.
+  m_choiceTitle: Allow the cannibals.
+  m_choiceText: You can't take down cannibals!? Food increased, population decreased
+    over time.
   m_choiceEffect:
     Duration: 3
     Food: 5

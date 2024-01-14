@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: TastyTastyGrass
   m_EditorClassIdentifier: 
-  m_choiceName: Tasty tasty grass
-  m_choiceTitle: Tasty tasty grass
-  m_choiceText: You eat the grass
+  m_choiceName: Eat the grass
+  m_choiceTitle: Eat the grass
+  m_choiceText: You eat the grass, gaining a little bit of food.
   m_choiceEffect:
     Duration: 0
     Food: 1

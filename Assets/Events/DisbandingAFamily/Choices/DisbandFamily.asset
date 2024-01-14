@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
   m_Name: DisbandFamily
   m_EditorClassIdentifier: 
-  m_choiceName: Disband family
-  m_choiceTitle: Disband family
-  m_choiceText: You disband the family, gaining their wealth in the process.
+  m_choiceName: Break the family apart
+  m_choiceTitle: Break the family apart
+  m_choiceText: You disband the family, gaining their wealth in the process, increasing
+    food and soviet rep, decreasing suspicion.
   m_choiceEffect:
     Duration: 0
     Food: 10
