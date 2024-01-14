@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
     Effect StartValues;
     Effect TurnSummary;
 
+    public Sprite upArrow;
+    public Sprite downArrow;
+    public Sprite noChange;
+
     //awake is caleld even if the object is disabled apaprently
     private void Awake()
     {
@@ -233,12 +237,99 @@ public class GameManager : MonoBehaviour
     public void ShowEffects()
     {
 
-        TextMeshProUGUI resources = GameObject.Find("Resources").GetComponent<TextMeshProUGUI>();
-        resources.text = "Population: " + Resources.Population + " + " + TurnSummary.Population + "\n"
-            + "Food: " + Resources.Food + " + " + TurnSummary.Food + " - " + Resources.Population + "\n"
-            + "Suspicion: " + Resources.Suspicion + " + " + TurnSummary.Suspicion + "\n"
-            + "People Rep: " + Resources.RepPeople + " + " + TurnSummary.RepPeople + "\n"
-            + "Soviet Rep: " + Resources.RepSoviet + " + " + TurnSummary.RepSoviet;
+        Transform resources = GameObject.Find("Resources").transform;
+        resources.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Population: " + Resources.Population;
+        resources.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Food: " + Resources.Food;
+        resources.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Suspicion: " + Resources.Suspicion;
+        resources.GetChild(3).GetComponent<TextMeshProUGUI>().text = "People Reputation: " + Resources.RepPeople;
+        resources.GetChild(4).GetComponent<TextMeshProUGUI>().text = "Soviet Reputation: " + Resources.RepSoviet;
+        SetResourceArrow(resources.GetChild(5), TurnSummary.Population);
+        SetResourceArrow(resources.GetChild(6), TurnSummary.Food - Resources.Population);
+        SetResourceArrow(resources.GetChild(7), TurnSummary.Suspicion);
+        SetResourceArrow(resources.GetChild(8), TurnSummary.RepPeople);
+        SetResourceArrow(resources.GetChild(9), TurnSummary.RepSoviet);
+        SetPopulationColour(resources.GetChild(0));
+        SetFoodColour(resources.GetChild(1));
+        SetSuspicionColour(resources.GetChild(2));
+        SetReputationColour(resources.GetChild(3), TurnSummary.RepPeople);
+        SetReputationColour(resources.GetChild(4), TurnSummary.RepSoviet);
+    }
+
+    void SetPopulationColour(Transform text)
+    {
+        if (Resources.Population > 80) 
+        {
+            text.GetComponent<TextMeshProUGUI>().color = Color.green;
+        }
+        else if (Resources.Population < 40)
+        {
+            text.GetComponent<TextMeshProUGUI>().color = Color.red;
+        }
+        else
+        {
+            text.GetComponent<TextMeshProUGUI>().color = Color.grey;
+        }
+    }
+
+    void SetFoodColour(Transform text)
+    {
+        if (Resources.Food > Resources.Population * 2)
+        {
+            text.GetComponent<TextMeshProUGUI>().color = Color.green;
+        }
+        else if (Resources.Population < Resources.Population)
+        {
+            text.GetComponent<TextMeshProUGUI>().color = Color.red;
+        }
+        else
+        {
+            text.GetComponent<TextMeshProUGUI>().color = Color.grey;
+        }
+    }
+
+    void SetSuspicionColour(Transform text)
+    {
+        if (Resources.Suspicion < 3)
+        {
+            text.GetComponent<TextMeshProUGUI>().color = Color.green;
+        }
+        else if (Resources.Suspicion > 6)
+        {
+            text.GetComponent<TextMeshProUGUI>().color = Color.red;
+        }
+        else
+        {
+            text.GetComponent<TextMeshProUGUI>().color = Color.grey;
+        }
+    }
+
+    void SetReputationColour(Transform text, int value)
+    {
+        if (System.Math.Abs(value) < 3)
+        {
+            text.GetComponent<TextMeshProUGUI>().color = Color.green;
+        }
+        else if (System.Math.Abs(value) > 6)
+        {
+            text.GetComponent<TextMeshProUGUI>().color = Color.red;
+        }
+        else
+        {
+            text.GetComponent<TextMeshProUGUI>().color = Color.grey;
+        }
+    }
+
+    void SetResourceArrow(Transform arrow, float value)
+    {
+        arrow.GetComponent<RawImage>().texture = noChange.texture;
+        if (value > 0)
+        {
+            arrow.GetComponent<RawImage>().texture = upArrow.texture;
+        }
+        else if (value < 0)
+        {
+            arrow.GetComponent<RawImage>().texture = downArrow.texture;
+        }
     }
     #endregion
     #region GameState
