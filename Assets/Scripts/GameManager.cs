@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     public Sprite upArrow;
     public Sprite downArrow;
-    public Sprite noChange;
+    public Sprite noChange;//change
 
     //awake is caleld even if the object is disabled apaprently
     private void Awake()
