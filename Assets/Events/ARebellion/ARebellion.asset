@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff9025627c1b41428905ca21e06d79b, type: 3}
+  m_Name: ARebellion
+  m_EditorClassIdentifier: 
+  m_eventName: A rebellion
+  m_eventTitle: A rebellion
+  m_eventText: "People are not happy with your rule, your reputation is getting very
+    low, if you don\u2019t do something soon they will overthrow you, kill you and
+    probably eat you."
+  m_firstChoice: {fileID: 11400000, guid: 23fb2acb7fe898d4da5144524b39d4e6, type: 2}
+  m_secondChoice: {fileID: 11400000, guid: 5d726afd301feca49a32c9eafc4a9382, type: 2}

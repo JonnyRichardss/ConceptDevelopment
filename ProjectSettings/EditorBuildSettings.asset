@@ -6,15 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/1. MainMenu.unity
+    path: Assets/Scenes/1. MainMenu.unity
     guid: c0256c15a71ef664dbe807434dbaa2d1
   - enabled: 1
-    path: Assets/2. VillageHall.unity
-    guid: 345ce80ffd939d248b7266fade6af83c
+    path: Assets/Scenes/JoelsEventScene.unity
+    guid: 16604a32512bdd04da91b0ab3c5f2749
   - enabled: 1
-    path: Assets/3. CityView.unity
+    path: Assets/Scenes/3. CityView.unity
     guid: 1e8391e5ec6070c4da15221396ae7a4f
   - enabled: 1
-    path: Assets/4. Options.unity
+    path: Assets/Scenes/2. VillageHall.unity
+    guid: 345ce80ffd939d248b7266fade6af83c
+  - enabled: 1
+    path: Assets/Scenes/4. Options.unity
     guid: e3d5cfa7e935c194b9054c545a50546a
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 5c77b01ee72421948bca0ea9c8078abc
   m_configObjects: {}

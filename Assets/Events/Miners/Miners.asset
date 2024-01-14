@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff9025627c1b41428905ca21e06d79b, type: 3}
+  m_Name: Miners
+  m_EditorClassIdentifier: 
+  m_eventName: Miners
+  m_eventTitle: Miners
+  m_eventText: "The minors are starting to get fat, it\u2019s not that they have
+    much food but the opposite, perhaps they would be more productive if they had
+    enough food to live on and maintain proper body metabolism."
+  m_firstChoice: {fileID: 11400000, guid: ebc7de2ee3c79a44a93b08d461a1047e, type: 2}
+  m_secondChoice: {fileID: 11400000, guid: 2d0e898b1ac49684f8a547d8d172eec0, type: 2}

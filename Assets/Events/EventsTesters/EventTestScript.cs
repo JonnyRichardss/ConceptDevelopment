@@ -8,10 +8,11 @@ public class EventTestScript : MonoBehaviour
 {
     public Canvas UI;
     public EventScriptable TestEvent;
+    public List<EventScriptable> Events;
     // Start is called before the first frame update
     void Start()
     {
-        SetEvent();
+        //SetEvent();
     }
 
     // Update is called once per frame
@@ -22,6 +23,6 @@ public class EventTestScript : MonoBehaviour
 
     public void SetEvent()
     {
-        UI.GetComponent<TestUIController>().SetEventUI(TestEvent);
+        transform.GetComponent<TestUIController>().SetEventUI(Events[Random.Range(0, Events.Count)]);
     }
 }

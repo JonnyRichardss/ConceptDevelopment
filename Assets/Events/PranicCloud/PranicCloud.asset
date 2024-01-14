@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff9025627c1b41428905ca21e06d79b, type: 3}
+  m_Name: PranicCloud
+  m_EditorClassIdentifier: 
+  m_eventName: Pranic Cloud
+  m_eventTitle: Pranic Cloud
+  m_eventText: A Soviet authority has been attacked by a women wielding a pranyk,
+    a tool used to wash clothes. Clearly this woman does not support Stalin or communism
+    and must be punished for her actions.
+  m_firstChoice: {fileID: 11400000, guid: 735e609d6aae3c24bb5733b83a8fd7e3, type: 2}
+  m_secondChoice: {fileID: 11400000, guid: cfea0ad44a2ba9f4e9966253385571dc, type: 2}

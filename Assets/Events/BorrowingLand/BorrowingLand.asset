@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff9025627c1b41428905ca21e06d79b, type: 3}
+  m_Name: BorrowingLand
+  m_EditorClassIdentifier: 
+  m_eventName: Borrowing Land
+  m_eventTitle: Borrowing Land
+  m_eventText: Pre - Stalin Lenin borrowed land off of land owners and created collective
+    farms with the promises of benefits to the peasants, these promises have not
+    appeared and people are realising they were lied to, some people are asking for
+    their land back, the USSR expects us not to give it.
+  m_firstChoice: {fileID: 11400000, guid: 7f94774bc9ce1fb42821234c7c4661b4, type: 2}
+  m_secondChoice: {fileID: 11400000, guid: e13c2ead0b82f67409e0868f4f5ba1db, type: 2}

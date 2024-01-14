@@ -1,7 +1,8 @@
-enum GameState
+public enum GameState
 {
     Menu = -1,
     ShowResources = 0,
-    ThroneRoom = 1,
-    CityView = 2
+    DrawEvents = 1,
+    DrawBuildings = 2,
+    EndGame = 3
 }

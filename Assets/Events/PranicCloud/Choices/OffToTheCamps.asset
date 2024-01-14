@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38a4f91bc9f5e140bae496154118aa6, type: 3}
+  m_Name: OffToTheCamps
+  m_EditorClassIdentifier: 
+  m_choiceName: Off to the camps!
+  m_choiceTitle: Off to the camps!
+  m_choiceText: You send the women to the camps, this is no way to treat your betters.
+  m_choiceEffect:
+    Duration: 0
+    Food: 0
+    Population: -1
+    Suspicion: -1
+    RepSoviet: 1
+    RepPeople: 0

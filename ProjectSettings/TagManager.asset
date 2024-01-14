@@ -3,9 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< Updated upstream
   tags: []
-=======
   tags:
   - Farm
   - Collective Farms
@@ -16,7 +14,8 @@ TagManager:
   - House
   - Orphanage
   - Windmill
->>>>>>> Stashed changes
+  tags:
+  - Farm
   layers:
   - Default
   - TransparentFX
@@ -24,9 +23,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Map
+  - Building
+  - Fauna
   - 
   - 
   - 

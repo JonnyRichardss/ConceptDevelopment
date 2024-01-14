@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff9025627c1b41428905ca21e06d79b, type: 3}
+  m_Name: ForcedIndustrialisation
+  m_EditorClassIdentifier: 
+  m_eventName: Forced Industrialization
+  m_eventTitle: Forced Industrialization
+  m_eventText: Stalin has announced he will be industrializing the USSR, that includes
+    Ukraine, this will require huge human and financial resources and the only way
+    to get that is to extort the citizens.
+  m_firstChoice: {fileID: 11400000, guid: 7af21f108e5c54443b05f984b3a2919d, type: 2}
+  m_secondChoice: {fileID: 11400000, guid: 8fdc9f342d9dfb34586eb4c1682918a6, type: 2}

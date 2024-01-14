@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff9025627c1b41428905ca21e06d79b, type: 3}
+  m_Name: AKolhozniksLife
+  m_EditorClassIdentifier: 
+  m_eventName: "A kolhoznik\u2019s life"
+  m_eventTitle: "A kolhoznik\u2019s life"
+  m_eventText: "You come across a family living on a collective farm, the wife is
+    sifting millet in the outer room and there are 3 chickens. They explain things
+    are bad, \u201Cwhy?\u201D only potatoes and millet since August, \u201CNo bread
+    or meat?\u201D, \u201Cnone\u201D, were things better before you joined the collective
+    farm? \u201CMuch better\u201D, \u201Cwhy did you join then?\u201D, \u201COh,
+    I don\u2019t know\u201D . "
+  m_firstChoice: {fileID: 11400000, guid: 20cc5a0fb177c0a4ea4deddc53a3cd32, type: 2}
+  m_secondChoice: {fileID: 11400000, guid: 67415c4ee5bc9cd408e4aba3336ef54a, type: 2}

@@ -38,4 +38,15 @@ public struct Effect
         output.RepPeople = a.RepPeople + b.RepPeople;
         return output;
     }
+
+    public static Effect operator - (Effect a, Effect b)
+    {
+        Effect output = new Effect();
+        output.Food = a.Food - b.Food;
+        output.Population = a.Population - b.Population;
+        output.Suspicion = a.Suspicion - b.Suspicion;
+        output.RepSoviet = a.RepSoviet - b.RepSoviet;
+        output.RepPeople = a.RepPeople - b.RepPeople;
+        return output;
+    }
 }
