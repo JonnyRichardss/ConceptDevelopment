@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlaceable: 1
   isPlaced: 0
+  neighbours: []
   buildingEffect: {fileID: 11400000, guid: 550512dd975d65947b7fe326a308b720, type: 2}
 --- !u!65 &7064863896360044665
 BoxCollider:
