@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     public Sprite upArrow;
     public Sprite downArrow;
-    public Sprite noChange;
+    public Sprite noChange;//change
 
     Effect TurnSummary;
     // Start is called before the first frame update
