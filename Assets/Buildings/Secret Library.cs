@@ -6,6 +6,7 @@ public class SecretLibrary : MonoBehaviour
 {
     BuildingController building;
     public bool isPlaced;
+    private bool isCheckingPlacement = true; // Boolean to control the continuous checking
 
     // Start is called before the first frame update
     void Start()
@@ -13,19 +14,23 @@ public class SecretLibrary : MonoBehaviour
         building = transform.parent.GetComponent<BuildingController>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    // FixedUpdate is called every fixed frame-rate frame
+    void FixedUpdate()
     {
-        if (other.gameObject.tag == "SecretLibraryPlacementArea") // Adjust the tag as needed
+        // Check if the building is not placed and we are still allowed to check placement
+        if (!isPlaced && isCheckingPlacement)
         {
-            BuildingPlacementArea placementArea = other.GetComponent<BuildingPlacementArea>();
-            if (placementArea != null && placementArea.CanPlaceBuilding())
-            {
-                PlaceSecretLibrary();
-            }
-            else
-            {
-                Debug.Log("Cannot place Secret Library here.");
-            }
+            CheckBuildingPlacement();
+        }
+    }
+
+    private void CheckBuildingPlacement()
+    {
+        // Check if the associated BuildingController is placed
+        if (building.isPlaced)
+        {
+            PlaceSecretLibrary();
+            isCheckingPlacement = false; // Stop continuous checking once placed
         }
     }
 

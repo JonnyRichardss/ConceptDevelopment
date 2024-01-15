@@ -6,26 +6,30 @@ public class RebelOupostController : MonoBehaviour
 {
     BuildingController building;
     public bool isPlaced;
+    private bool isCheckingPlacement = true; // Boolean to control the continuous checking
 
     void Start()
     {
         building = transform.parent.GetComponent<BuildingController>();
     }
 
-
-    private void OnTriggerEnter(Collider other)
+    // FixedUpdate is called every fixed frame-rate frame
+    void FixedUpdate()
     {
-        if (other.gameObject.tag == "RebelOutpostPlacementArea") 
+        // Check if the building is not placed and we are still allowed to check placement
+        if (!isPlaced && isCheckingPlacement)
         {
-            BuildingPlacementArea placementArea = other.GetComponent<BuildingPlacementArea>();
-            if (placementArea != null && placementArea.CanPlaceBuilding())
-            {
-                PlaceRebelOutpost();
-            }
-            else
-            {
-                Debug.Log("Cannot place Rebel Outpost here.");
-            }
+            CheckBuildingPlacement();
+        }
+    }
+
+    private void CheckBuildingPlacement()
+    {
+        // Check if the associated BuildingController is placed
+        if (building.isPlaced)
+        {
+            PlaceRebelOutpost();
+            isCheckingPlacement = false; // Stop continuous checking once placed
         }
     }
 
@@ -36,7 +40,7 @@ public class RebelOupostController : MonoBehaviour
             building.isPlaced = true;
             isPlaced = true;
 
-            Effect rebelOutpostEffect = new Effect(0, 0, 0, 0, 1, 0); 
+            Effect rebelOutpostEffect = new Effect(0, 0, 0, 0, 1, 0);
             GameManager.instance.Effects.Add(rebelOutpostEffect);
             GameManager.instance.ApplyChoiceChange(rebelOutpostEffect);
 
