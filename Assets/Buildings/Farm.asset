@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2fa4568b6a2f0418cb5fbc4bf2d349, type: 3}
   m_Name: Farm
   m_EditorClassIdentifier: 
-  m_buildingName: 
+  m_buildingName: Farm
   m_buildingText: 
   m_buildingEffect:
     Duration: -1

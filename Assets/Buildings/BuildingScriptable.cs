@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "My Assets/Buildings")]
 public class BuildingScriptable : ScriptableObject
 {
-    [SerializeField] string m_buildingName;
+    [SerializeField] public string m_buildingName;
     [SerializeField] string m_buildingText;
     [SerializeField] public Effect m_buildingEffect;
     [SerializeField] Vector2 m_buildingCoordinates;

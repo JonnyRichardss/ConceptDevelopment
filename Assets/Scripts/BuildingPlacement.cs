@@ -13,6 +13,7 @@ public class BuildingPlacement : MonoBehaviour
 
     public static BuildingPlacement instance;
     public bool isPlacingBuilding = false;
+    public bool choosingCards = true;
     public List<Transform> AllBuildings = new List<Transform>();
     public Transform currentBuilding;
     public Transform cards;
@@ -88,6 +89,7 @@ public class BuildingPlacement : MonoBehaviour
                 break;
         }
         currentBuilding.gameObject.SetActive(true);
+        choosingCards = false;
         cards.gameObject.SetActive(false);
     }
 
@@ -163,6 +165,7 @@ public class BuildingPlacement : MonoBehaviour
     public void DrawBuildings(Action<bool> _callback)
     {
         callback = _callback;
+        choosingCards = true;
         //StartCoroutine(DrawBuildingsRoutine());
         cards = GameObject.Find("Cards").transform;
         cards.gameObject.SetActive(true);
@@ -180,11 +183,39 @@ public class BuildingPlacement : MonoBehaviour
             currentCard.GetComponentInChildren<Button>().onClick.AddListener(() => SetCurrentBuilding(deckChoice));
             BuildingScriptable buildingEffect = DrawnBuilding.GetComponent<BuildingController>().buildingEffect;
             currentCard.GetChild(0).GetComponent<TextMeshProUGUI>().text = buildingEffect.name;
-            currentCard.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Population: " + buildingEffect.m_buildingEffect.Population.ToString();
-            currentCard.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Food: " + buildingEffect.m_buildingEffect.Food.ToString();
-            currentCard.GetChild(3).GetComponent<TextMeshProUGUI>().text = "Suspicion: " + buildingEffect.m_buildingEffect.Suspicion.ToString();
-            currentCard.GetChild(4).GetComponent<TextMeshProUGUI>().text = "Rep People: " + buildingEffect.m_buildingEffect.RepPeople.ToString();
-            currentCard.GetChild(5).GetComponent<TextMeshProUGUI>().text = "Rep Soviet: " + buildingEffect.m_buildingEffect.RepSoviet.ToString();
+            switch (buildingEffect.m_buildingName)
+            {
+                case "Collective Farm":
+                    currentCard.GetChild(1).GetComponent<TextMeshProUGUI>().text = "+" + buildingEffect.m_buildingEffect.Food + " food per turn";
+                    break;
+                case "Farm":
+                    currentCard.GetChild(1).GetComponent<TextMeshProUGUI>().text = "+" + buildingEffect.m_buildingEffect.Food + " food per turn";
+                    break;
+                case "FoodStash":
+                    currentCard.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Can store food here for later.\n High food increases suspicion.";
+                    break;
+                case "House":
+                    currentCard.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Increases population by " + buildingEffect.m_buildingEffect.Population + " when placed";
+                    break;
+                case "Orphanage":
+                    currentCard.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Increases population by " + buildingEffect.m_buildingEffect.Population + " when placed";
+                    break;
+                case "Propaganda House":
+                    currentCard.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Increases Soviet reputation by " + buildingEffect.m_buildingEffect.RepSoviet + " when placed";
+                    break;
+                case "Rebel Outpost":
+                    currentCard.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Increases People reputation by " + buildingEffect.m_buildingEffect.RepSoviet + " when placed";
+                    break;
+                case "Secret Library":
+                    currentCard.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Increases or decreases both Soviet and People reputation toward 0 by " + buildingEffect.m_buildingEffect.RepPeople + " when placed";
+                    break;
+                case "Windmill":
+                    currentCard.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Increases food by 5 when placed, per adjacent farm or collective farm, per turn";
+                    break;
+                default:
+                    currentCard.GetChild(1).GetComponent<TextMeshProUGUI>().text = "This building is outside the buildings set inside buildingInformationScript.";
+                    break;
+            }
         }
     }
 
