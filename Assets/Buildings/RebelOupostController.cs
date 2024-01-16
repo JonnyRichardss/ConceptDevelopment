@@ -40,7 +40,7 @@ public class RebelOupostController : MonoBehaviour
             building.isPlaced = true;
             isPlaced = true;
 
-            Effect rebelOutpostEffect = new Effect(0, 0, 0, 0, 1, 0);
+            Effect rebelOutpostEffect = new Effect(0, 0, 0, 0, -1, 1);
             GameManager.instance.Effects.Add(rebelOutpostEffect);
             GameManager.instance.ApplyChoiceChange(rebelOutpostEffect);
 
