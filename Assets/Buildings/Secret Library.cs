@@ -40,11 +40,11 @@ public class SecretLibrary : MonoBehaviour
         {
             building.isPlaced = true;
             isPlaced = true;
+                       
 
-            int repSovietChange = GameManager.instance.CurrentResources.RepSoviet > 0 ? -1 : 1;
-            int repPeopleChange = GameManager.instance.CurrentResources.RepPeople < 0 ? 1 : 0;
+            Effect secretLibraryEffect = new Effect (0, 0, 0, 0, -1, 1);                      
+            
 
-            Effect secretLibraryEffect = new Effect(0, 0, 0, repSovietChange, repPeopleChange, 0);
             GameManager.instance.Effects.Add(secretLibraryEffect);
             GameManager.instance.ApplyChoiceChange(secretLibraryEffect);
 

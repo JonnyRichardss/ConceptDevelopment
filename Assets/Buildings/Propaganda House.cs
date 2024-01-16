@@ -41,7 +41,7 @@ public class PropagandaHouse : MonoBehaviour
             building.isPlaced = true;
             isPlaced = true;
 
-            Effect propagandaEffect = new Effect(0, 0, 0, 1, 0, 0);
+            Effect propagandaEffect = new Effect(0, 0, 0, 0, 1, 0);
             GameManager.instance.Effects.Add(propagandaEffect);
             GameManager.instance.ApplyChoiceChange(propagandaEffect);
 
