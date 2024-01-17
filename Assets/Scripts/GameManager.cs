@@ -185,7 +185,6 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForFixedUpdate();
         }
-        print("building placed!");
         if (isIndustrialisation)
         {
             isIndustrialisation = false;

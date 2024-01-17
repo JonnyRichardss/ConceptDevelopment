@@ -52,13 +52,13 @@ public class BuildingInformationScript : MonoBehaviour
                 tipText.text = "Increases population by " + building.m_buildingEffect.Population + " when placed";
                 break;
             case "Propaganda House":
-                tipText.text = "Increases Soviet reputation by " + building.m_buildingEffect.RepSoviet + " when placed";
+                tipText.text = "Increases Soviet reputation by 1 when placed";
                 break;
             case "Rebel Outpost":
-                tipText.text = "Increases People reputation by " + building.m_buildingEffect.RepSoviet + " when placed";
+                tipText.text = "Increases People reputation by 1 when placed";
                 break;
             case "Secret Library":
-                tipText.text = "Increases or decreases both Soviet and People reputation toward 0 by " + building.m_buildingEffect.RepPeople + " when placed";
+                tipText.text = "Increases or decreases both Soviet and People reputation toward 0 by 1 when placed";
                 break;
             case "Windmill":
                 tipText.text = "Increases food by 5 when placed, per adjacent farm or collective farm, per turn";

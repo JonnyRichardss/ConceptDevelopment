@@ -28,7 +28,7 @@ public class BuildingController : MonoBehaviour
         {
             if (!isPlaced)
             {
-                transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false; //could change later when models made
+                transform.GetChild(0).gameObject.SetActive(false);
                 overlappingBuilding = true;
                 isPlaceable = false;
             }
@@ -41,7 +41,7 @@ public class BuildingController : MonoBehaviour
         {
             if (!isPlaced)
             {
-                transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false; //could change later when models made
+                transform.GetChild(0).gameObject.SetActive(false);
                 overlappingBuilding = true;
                 isPlaceable = false;
             }
@@ -54,7 +54,7 @@ public class BuildingController : MonoBehaviour
         {
             if (!isPlaced)
             {
-                transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+                transform.GetChild(0).gameObject.SetActive(true);
                 overlappingBuilding = false;
                 isPlaceable = true;
             }
@@ -68,12 +68,12 @@ public class BuildingController : MonoBehaviour
             if (RaycastBoundaries(1, 1) && RaycastBoundaries(1, -1) && RaycastBoundaries(-1, 1) && RaycastBoundaries(-1, -1))
             {
                 isPlaceable = true;
-                transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+                transform.GetChild(0).gameObject.SetActive(true);
             }
             else
             {
                 isPlaceable = false;
-                transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+                transform.GetChild(0).gameObject.SetActive(false);
             }
         }
     }
