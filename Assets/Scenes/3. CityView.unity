@@ -11252,19 +11252,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444528710403291039, guid: 1a7a055158311dd4cabe95ad701e4a74, type: 3}
       propertyPath: NewDrawPile.Array.data[6]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2444528710403291039, guid: 1a7a055158311dd4cabe95ad701e4a74, type: 3}
       propertyPath: NewDrawPile.Array.data[7]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2444528710403291039, guid: 1a7a055158311dd4cabe95ad701e4a74, type: 3}
       propertyPath: NewDrawPile.Array.data[8]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2444528710403291039, guid: 1a7a055158311dd4cabe95ad701e4a74, type: 3}
       propertyPath: NewDrawPile.Array.data[9]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2444528710403291039, guid: 1a7a055158311dd4cabe95ad701e4a74, type: 3}
       propertyPath: AllBuildings.Array.data[0]
@@ -11304,11 +11304,11 @@ PrefabInstance:
       objectReference: {fileID: 1272961906}
     - target: {fileID: 2444528710403291039, guid: 1a7a055158311dd4cabe95ad701e4a74, type: 3}
       propertyPath: NewDrawPile.Array.data[10]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2444528710403291039, guid: 1a7a055158311dd4cabe95ad701e4a74, type: 3}
       propertyPath: NewDrawPile.Array.data[11]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2444528710403291039, guid: 1a7a055158311dd4cabe95ad701e4a74, type: 3}
       propertyPath: NewDrawPile.Array.data[12]
