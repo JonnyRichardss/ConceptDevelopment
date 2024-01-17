@@ -16,7 +16,7 @@ MonoBehaviour:
   m_buildingText: 
   m_buildingEffect:
     Duration: 0
-    Food: 0
+    Food: 10
     Population: 0
     Suspicion: 0
     RepSoviet: 0

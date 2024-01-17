@@ -155,6 +155,43 @@ public class BuildingPlacement : MonoBehaviour
                 Debug.Log("can't build there");
             }
         }
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit, 1000, LayerMask.GetMask("Building")))
+        {
+            print(hit.collider.gameObject.name);
+            // Check if the hit object has the "FoodStash" tag
+            if (hit.collider.CompareTag("Food Stash"))
+            {
+                print("hii");
+                FoodStashController foodStash = hit.collider.GetComponent<FoodStashController>();
+                // Deposit 1 food into the stash on left-click
+                foodStash.DepositFood(1);
+                Debug.Log("Deposited 1 food into the stash. Current food amount: " + foodStash.GetCurrentFoodAmount());
+            }
+        }
+    }
+
+    void OnRightClick()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit, 1000, LayerMask.GetMask("Building")))
+        {
+            // Check if the hit object has the "FoodStash" tag
+            if (hit.collider.CompareTag("Food Stash"))
+            {
+                FoodStashController foodStash = hit.collider.GetComponent<FoodStashController>();
+
+                // Withdraw 1 food from the stash on right-click
+                if (foodStash.WithdrawFood(1))
+                {
+                    Debug.Log("Withdrew 1 food from the stash. Current food amount: " + foodStash.GetCurrentFoodAmount());
+                }
+                else
+                {
+                    Debug.Log("Failed to withdraw food. Insufficient food in the stash.");
+                }
+            }
+        }
     }
 
     public void Refresh()

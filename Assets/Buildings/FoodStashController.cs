@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class FoodStashController : MonoBehaviour
 {
-    private int foodAmount = 0;
+    public int foodAmount = 0;
 
     // Method to deposit food into the stash
     public void DepositFood(int amount)
     {
         foodAmount += amount;
+        GameManager.instance.Resources.TryApplyEffect(new Effect(0, -1, 0, 0, 0, 0));
         Debug.Log("Deposited " + amount + " food. Current food amount: " + foodAmount);
     }
 
@@ -19,6 +20,7 @@ public class FoodStashController : MonoBehaviour
         if (foodAmount >= amount)
         {
             foodAmount -= amount;
+            GameManager.instance.Resources.TryApplyEffect(new Effect(0, 1, 0, 0, 0, 0));
             Debug.Log("Withdrawn " + amount + " food. Current food amount: " + foodAmount);
             return true; // Withdrawal successful
         }
