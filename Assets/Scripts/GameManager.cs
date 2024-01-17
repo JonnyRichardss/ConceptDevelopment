@@ -47,6 +47,18 @@ public class GameManager : MonoBehaviour
     #region StartEnd
     public void NewGame()
     {
+        if (GameObject.Find("Map") != null)
+        {
+            Destroy(GameObject.Find("Map"));
+        }
+        if (GameObject.Find("AllBuildings") != null)
+        {
+            Destroy(GameObject.Find("AllBuildings"));
+        }
+        if (GameObject.Find("EventManager") != null)
+        {
+            Destroy(GameObject.Find("EventManager"));
+        }
         Resources = new ResourceHolder(100f, 100f, 0f, 0, 0);
         Effects = new List<Effect>();
         Buildings = new List<BuildingScriptable>();
