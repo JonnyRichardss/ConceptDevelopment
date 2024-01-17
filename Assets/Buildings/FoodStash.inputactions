@@ -1,0 +1,45 @@
+{
+    "name": "FoodStash",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "006788fb-ca30-4e88-b146-ae66d70125d0",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "728882c0-0317-48eb-8aa1-c11fc4dd5ddb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bdf55c41-971c-4a99-a465-a14dc303fc8f",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f2b3741b-0b57-4441-91bf-c536256f686b",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

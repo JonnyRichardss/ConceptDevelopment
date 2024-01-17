@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class BuildingPlacement : MonoBehaviour
@@ -17,7 +18,7 @@ public class BuildingPlacement : MonoBehaviour
     public Transform currentBuilding;
     public Transform cards;
 
-    Action<bool> callback;
+    Action<bool> callback;    
 
     private void Awake()
     {
@@ -43,6 +44,8 @@ public class BuildingPlacement : MonoBehaviour
         {
             PlaceBuilding();
         }
+
+        HandleInput();
     }
 
     void PlaceBuilding()
@@ -51,6 +54,73 @@ public class BuildingPlacement : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 1000, LayerMask.GetMask("Map")))
         {
             currentBuilding.position = new Vector3(Mathf.Round(hit.point.x), Mathf.Round(hit.point.y), Mathf.Round(hit.point.z));
+        }
+    }
+
+    void HandleInput()
+    {
+        // Get the left click action
+        var leftClickAction = new InputAction("LeftClick", binding: "<Mouse>/leftButton");
+
+        // Get the right click action
+        var rightClickAction = new InputAction("RightClick", binding: "<Mouse>/rightButton");
+
+        // Enable the actions
+        leftClickAction.Enable();
+        rightClickAction.Enable();
+
+        // Check for left click
+        if (leftClickAction.triggered)
+        {
+            OnPlaceBuilding();
+        }
+
+        // Check for right click to remove food
+        if (rightClickAction.triggered)
+        {
+            RaycastAndHandleFood(false);
+        }
+
+        // Check for left click to add food
+        if (leftClickAction.triggered)
+        {
+            RaycastAndHandleFood(true);
+        }
+    }
+
+    void RaycastAndHandleFood(bool addFood)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit, 1000, LayerMask.GetMask("Map")))
+        {
+            // Check if the hit object has the "FoodStash" tag
+            if (hit.collider.CompareTag("FoodStash"))
+            {
+                FoodStashController foodStash = hit.collider.GetComponent<FoodStashController>();
+
+                // Check if we should add or remove food
+                if (foodStash != null)
+                {
+                    if (addFood)
+                    {
+                        // Deposit 1 food into the stash on left-click
+                        foodStash.DepositFood(1);
+                        Debug.Log("Deposited 1 food into the stash. Current food amount: " + foodStash.GetCurrentFoodAmount());
+                    }
+                    else
+                    {
+                        // Withdraw 1 food from the stash on right-click
+                        if (foodStash.WithdrawFood(1))
+                        {
+                            Debug.Log("Withdrew 1 food from the stash. Current food amount: " + foodStash.GetCurrentFoodAmount());
+                        }
+                        else
+                        {
+                            Debug.Log("Failed to withdraw food. Insufficient food in the stash.");
+                        }
+                    }
+                }
+            }
         }
     }
 
