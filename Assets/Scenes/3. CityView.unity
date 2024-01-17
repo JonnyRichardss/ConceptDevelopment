@@ -5259,6 +5259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Food Stash
       objectReference: {fileID: 0}
+    - target: {fileID: 3697852984634339648, guid: fb39b22e996586a4b905bc3638f8be9b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4312976330516210640, guid: fb39b22e996586a4b905bc3638f8be9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

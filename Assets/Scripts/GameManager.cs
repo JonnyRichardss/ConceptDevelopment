@@ -8,7 +8,7 @@ using static GameManager;
 
 public class GameManager : MonoBehaviour
 {
-    ResourceHolder Resources; 
+    public ResourceHolder Resources; 
     public List<Effect> Effects;
     List<BuildingScriptable> Buildings;
     public GameState state;
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     public void ExitToMenu()
     {
         state = GameState.Menu;
-        SwitchView();
+        StartCoroutine(SwitchView());
     }
     #endregion
     
