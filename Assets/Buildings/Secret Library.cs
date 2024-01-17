@@ -40,15 +40,44 @@ public class SecretLibrary : MonoBehaviour
         {
             building.isPlaced = true;
             isPlaced = true;
-                       
-
-            Effect secretLibraryEffect = new Effect (0, 0, 0, 0, -1, 1);                      
             
+            int sovietRep = GameManager.instance.Resources.RepSoviet;
+            int peopleRep = GameManager.instance.Resources.RepPeople;
 
-            GameManager.instance.Effects.Add(secretLibraryEffect);
-            GameManager.instance.ApplyChoiceChange(secretLibraryEffect);
+            
+            int resourceChange = 0;
+            int duration = 1;
 
-            Debug.Log("Secret Library placed successfully.");
+            
+            if (sovietRep > 0)
+            {
+                
+                resourceChange = -1;
+                duration = 1;
+
+                Debug.Log("Secret Library placed successfully. Decreased Soviet reputation.");
+            }
+            
+            if (peopleRep < 0)
+            {
+                
+                resourceChange = +1;
+                duration = 1;
+
+                Debug.Log("Secret Library placed successfully. Increased People's reputation.");
+            }
+
+            
+            if (resourceChange != 0)
+            {
+                Effect secretLibraryEffect = new Effect(resourceChange, duration);
+                GameManager.instance.Effects.Add(secretLibraryEffect);
+                GameManager.instance.ApplyChoiceChange(secretLibraryEffect);
+            }
+            else
+            {
+                Debug.Log("Secret Library placed successfully. No reputation changes needed.");
+            }
         }
         else
         {
@@ -56,3 +85,7 @@ public class SecretLibrary : MonoBehaviour
         }
     }
 }
+        
+    
+        
+
