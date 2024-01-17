@@ -75,6 +75,10 @@ public class TestUIController : MonoBehaviour
         m_choice.gameObject.SetActive(true);
         m_choiceTitle.text = newChoice.m_choiceName;
         m_choiceText.text = newChoice.m_choiceText;
+        if (newChoice.m_eventScript != null)
+        {
+            newChoice.m_eventScript.TriggerEventScript();
+        }
         GameManager.instance.Effects.Add(newChoice.m_choiceEffect);
         GameManager.instance.ApplyChoiceChange(newChoice.m_choiceEffect);
     }

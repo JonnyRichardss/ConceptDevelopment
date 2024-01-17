@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class BuildingPlacement : MonoBehaviour
 {
     public List<int> NewDrawPile = new List<int>();
-    List<int> DrawPile = new List<int>();
+    public List<int> DrawPile = new List<int>();
     List<int> DiscardPile = new List<int>();
 
     public static BuildingPlacement instance;
@@ -175,8 +175,9 @@ public class BuildingPlacement : MonoBehaviour
         }
         for (int i = 0; i < 3; i++)
         {
-            int deckChoice = DrawPile[UnityEngine.Random.Range(0, DrawPile.Count)];
-            DrawPile.RemoveAt(deckChoice);
+            int position = UnityEngine.Random.Range(0, DrawPile.Count);
+            int deckChoice = DrawPile[position];
+            DrawPile.RemoveAt(position);
             Transform DrawnBuilding = GetDrawnBuilding(deckChoice);
             Transform currentCard = cards.GetChild(i);
             currentCard.GetComponentInChildren<Button>().onClick.RemoveAllListeners();

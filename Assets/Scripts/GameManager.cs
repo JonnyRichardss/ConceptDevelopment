@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int TurnNumber;
     public bool hasEvents = false;
     public bool hasBuildings = false;
+    public bool isIndustrialisation = false;
     public enum EndReason { allGone, allStarved, suspicion, noPeopleRep, noSovietRep }
     public EndReason endReason;
     Text SummaryText;
@@ -185,7 +186,15 @@ public class GameManager : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         print("building placed!");
-        hasBuildings = true;
+        if (isIndustrialisation)
+        {
+            isIndustrialisation = false;
+            hasEvents = true;
+        }
+        else
+        {
+            hasBuildings = true;
+        }
         //yield return new WaitForSeconds(1f);
         //display all
         //place one
