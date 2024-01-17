@@ -20,6 +20,7 @@ MonoBehaviour:
     Duration: 0
     Food: 0
     Population: 0
-    Suspicion: 0
+    Suspicion: 1
     RepSoviet: -1
     RepPeople: 1
+  m_eventScript: {fileID: 0}

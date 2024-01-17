@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_choiceName: Give the people the land
   m_choiceTitle: Give the people the land
-  m_choiceText: You give them back their land, the Soviets and Stalin will not be
-    happy about this one but the people really like it.
+  m_choiceText: You lose a farm, the Soviets and Stalin will not be happy about this
+    one but the people really like it.
   m_choiceEffect:
     Duration: 0
     Food: 0
     Population: 0
     Suspicion: 1
-    RepSoviet: -2
+    RepSoviet: -1
     RepPeople: 3
+  m_eventScript: {fileID: 11400000, guid: 2a7c74a39bd2b5d4ca6fef08f0fdeb0f, type: 2}

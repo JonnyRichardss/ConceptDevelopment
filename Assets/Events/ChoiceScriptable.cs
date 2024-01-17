@@ -9,4 +9,5 @@ public class ChoiceScriptable : ScriptableObject
     [SerializeField] public string m_choiceTitle;
     [SerializeField] public string m_choiceText;
     [SerializeField] public Effect m_choiceEffect;
+    [SerializeField] public AbstractEventScript m_eventScript;
 }
