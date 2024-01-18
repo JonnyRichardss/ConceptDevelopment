@@ -23,4 +23,4 @@ MonoBehaviour:
     RepSoviet: 0
     RepPeople: 0
   m_eventScript: {fileID: 0}
-  tooltip: -3 food \n -3 population \n 5 turns
+  tooltip: '-3 food : -3 population : 5 turns'
