@@ -19,3 +19,4 @@ MonoBehaviour:
     time to import food from Odessa.
   m_firstChoice: {fileID: 11400000, guid: 2f693427a93e4544f930664d27882347, type: 2}
   m_secondChoice: {fileID: 11400000, guid: ddbb899247cfd404387532ea6a392afb, type: 2}
+  reference: https://www.theguardian.com/world/2022/mar/02/exposing-stalin-famine-in-ukraine-muggeridge-1933

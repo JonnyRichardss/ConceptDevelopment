@@ -10,4 +10,5 @@ public class EventScriptable : ScriptableObject
     public string m_eventText;
     public ChoiceScriptable m_firstChoice;
     public ChoiceScriptable m_secondChoice;
+    public string reference;
 }

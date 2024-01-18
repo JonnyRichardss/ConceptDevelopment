@@ -19,3 +19,4 @@ MonoBehaviour:
     this is affecting your town a lot as well."
   m_firstChoice: {fileID: 11400000, guid: 53bc887d90e56cc41988e4fbba85fd49, type: 2}
   m_secondChoice: {fileID: 11400000, guid: c9beac00ac190d2429527c874984e385, type: 2}
+  reference: http://history.org.ua/LiberUA/5-333-00875-2/5-333-00875-2.pdf
