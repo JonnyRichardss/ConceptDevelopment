@@ -20,3 +20,4 @@ MonoBehaviour:
     the famine.
   m_firstChoice: {fileID: 11400000, guid: 4ba491f845bb66b4e86b323e8ad48fcf, type: 2}
   m_secondChoice: {fileID: 11400000, guid: 6581c0ae36aa681428169b36f7aa95b8, type: 2}
+  reference: http://history.org.ua/LiberUA/5-333-00875-2/5-333-00875-2.pdf

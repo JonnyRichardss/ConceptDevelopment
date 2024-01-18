@@ -21,6 +21,7 @@ public class TestUIController : MonoBehaviour
     public Transform m_choice;
     public TextMeshProUGUI m_choiceTitle;
     public TextMeshProUGUI m_choiceText;
+    public TextMeshProUGUI m_reference;
     public Button m_endButton;
 
     bool drawingEvents = false;
@@ -62,6 +63,7 @@ public class TestUIController : MonoBehaviour
         m_returnButton.onClick.RemoveAllListeners();
         m_eventTitle.text = newEvent.m_eventName;
         m_eventText.text = newEvent.m_eventText;
+        m_reference.text = newEvent.reference;
         m_firstButton.GetComponentInChildren<TextMeshProUGUI>().text = newEvent.m_firstChoice.m_choiceName;
         m_firstButton.onClick.AddListener(() => SetChoiceUI(newEvent.m_firstChoice));
         m_firstButton.GetComponent<ChoiceContainer>().choice = newEvent.m_firstChoice;

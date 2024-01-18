@@ -19,3 +19,4 @@ MonoBehaviour:
     of bread - and he spends it mostly on fuel, this is no way to live."
   m_firstChoice: {fileID: 11400000, guid: e1f1c2de9a2141d4f9ec6f4450217041, type: 2}
   m_secondChoice: {fileID: 11400000, guid: 74288a705fe57fc4791a8061597f1103, type: 2}
+  reference: https://www.theguardian.com/world/2022/mar/02/exposing-stalin-famine-in-ukraine-muggeridge-1933
