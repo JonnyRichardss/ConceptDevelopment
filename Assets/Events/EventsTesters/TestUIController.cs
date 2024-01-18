@@ -64,8 +64,10 @@ public class TestUIController : MonoBehaviour
         m_eventText.text = newEvent.m_eventText;
         m_firstButton.GetComponentInChildren<TextMeshProUGUI>().text = newEvent.m_firstChoice.m_choiceName;
         m_firstButton.onClick.AddListener(() => SetChoiceUI(newEvent.m_firstChoice));
+        m_firstButton.GetComponent<ChoiceContainer>().choice = newEvent.m_firstChoice;
         m_secondButton.GetComponentInChildren<TextMeshProUGUI>().text = newEvent.m_secondChoice.m_choiceName;
         m_secondButton.onClick.AddListener(() => SetChoiceUI(newEvent.m_secondChoice));
+        m_secondButton.GetComponent<ChoiceContainer>().choice = newEvent.m_secondChoice;
         m_returnButton.onClick.AddListener(() => SetEvent(false));
     }
 

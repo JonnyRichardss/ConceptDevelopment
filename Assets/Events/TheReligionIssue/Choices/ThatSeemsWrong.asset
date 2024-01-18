@@ -23,3 +23,5 @@ MonoBehaviour:
     Suspicion: 2
     RepSoviet: -2
     RepPeople: 0
+  m_eventScript: {fileID: 0}
+  tooltip: '2 Suspicion : -2 Soviet Rep'
