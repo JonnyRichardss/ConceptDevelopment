@@ -24,3 +24,4 @@ MonoBehaviour:
     RepSoviet: 0
     RepPeople: 0
   m_eventScript: {fileID: 11400000, guid: 9f1c8a3d8a357264cb2b642a1399a5ac, type: 2}
+  tooltip: 'End events and build extra building : -2 Food : -2 Pop : 5 Turns'

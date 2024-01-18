@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BuildingInformationScript : MonoBehaviour
 {
     public Transform Tooltip;
     TextMeshProUGUI tipText;
+    [SerializeField] GraphicRaycaster m_Raycaster;
+    PointerEventData m_PointerEventData;
+    [SerializeField] RectTransform canvasRect;
+    [SerializeField] EventSystem m_EventSystem;
     // Update is called once per frame
     private void Start()
     {
@@ -20,15 +27,49 @@ public class BuildingInformationScript : MonoBehaviour
 
     void HoverOverBuilding()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (!BuildingPlacement.instance.choosingCards && Physics.Raycast(ray, out RaycastHit hit, 1000, LayerMask.GetMask("Building")))
+        bool UIHit = false;
+        Transform choice = transform;
+        if (m_Raycaster != null)
         {
-            SetTooltip(hit.transform);
-            Tooltip.position = Input.mousePosition + new Vector3(250, 0, 0);
+            m_PointerEventData = new PointerEventData(m_EventSystem);
+            m_PointerEventData.position = Input.mousePosition;
+            List<RaycastResult> results = new List<RaycastResult>();
+            m_Raycaster.Raycast(m_PointerEventData, results);
+            foreach (RaycastResult result in results)
+            {
+                if (result.gameObject.tag == "Choice")
+                {
+                    UIHit = true;
+                    choice = result.gameObject.transform;
+                    break;
+                }
+            }
         }
-        else
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (SceneManager.GetActiveScene().name == "3. CityView")
         {
-            Tooltip.gameObject.SetActive(false);
+            if (!BuildingPlacement.instance.choosingCards && Physics.Raycast(ray, out RaycastHit hit, 1000, LayerMask.GetMask("Building")))
+            {
+                SetTooltip(hit.transform);
+                Tooltip.position = Input.mousePosition + new Vector3(250, 0, 0);
+            }
+            else
+            {
+                Tooltip.gameObject.SetActive(false);
+            }
+        }
+        if (SceneManager.GetActiveScene().name == "JoelsEventScene")
+        {
+            if (UIHit == true)
+            {
+                Tooltip.gameObject.SetActive(true);
+                tipText.text = choice.GetComponent<ChoiceContainer>().choice.tooltip;
+                Tooltip.position = Input.mousePosition + new Vector3(300, 0, 0);
+            }
+            else
+            {
+                Tooltip.gameObject.SetActive(false);
+            }
         }
     }
 

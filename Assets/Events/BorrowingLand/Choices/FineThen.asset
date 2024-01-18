@@ -24,3 +24,4 @@ MonoBehaviour:
     RepSoviet: -1
     RepPeople: 3
   m_eventScript: {fileID: 11400000, guid: 2a7c74a39bd2b5d4ca6fef08f0fdeb0f, type: 2}
+  tooltip: '1 Suspicion : -1 Soviet Rep : 3 People Rep : Lose a farm'

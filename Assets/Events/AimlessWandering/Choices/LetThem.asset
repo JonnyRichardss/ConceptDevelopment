@@ -23,3 +23,4 @@ MonoBehaviour:
     RepSoviet: 0
     RepPeople: 0
   m_eventScript: {fileID: 11400000, guid: cd949e05f6321a54b920983f61d4bb2a, type: 2}
+  tooltip: Random -10/+10 population

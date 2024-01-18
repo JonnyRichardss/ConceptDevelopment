@@ -3,19 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
   tags:
-  - Farm
-  - Collective Farms
+  - Secret Libary
+  - Rebel Outpost
   - Food Stash
   - Propaganda House
-  - Rebel Outpost
-  - Secret Libary
-  - House
-  - Orphanage
-  - Windmill
-  tags:
   - Farm
+  - Collective Farms
+  - Choice
   layers:
   - Default
   - TransparentFX

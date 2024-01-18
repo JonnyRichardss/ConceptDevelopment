@@ -24,3 +24,4 @@ MonoBehaviour:
     RepSoviet: -1
     RepPeople: 1
   m_eventScript: {fileID: 0}
+  tooltip: '-1 Soviet Rep : 1 People Rep'

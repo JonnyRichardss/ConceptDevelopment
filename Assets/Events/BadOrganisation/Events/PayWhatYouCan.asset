@@ -22,3 +22,5 @@ MonoBehaviour:
     Suspicion: 0
     RepSoviet: 0
     RepPeople: 0
+  m_eventScript: {fileID: 0}
+  tooltip: -15 Food

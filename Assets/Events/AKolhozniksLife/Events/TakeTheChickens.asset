@@ -22,3 +22,5 @@ MonoBehaviour:
     Suspicion: 0
     RepSoviet: 0
     RepPeople: -1
+  m_eventScript: {fileID: 0}
+  tooltip: '+15 food : -1 People Rep'

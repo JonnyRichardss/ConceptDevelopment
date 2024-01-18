@@ -23,3 +23,5 @@ MonoBehaviour:
     Suspicion: 0
     RepSoviet: 0
     RepPeople: -1
+  m_eventScript: {fileID: 0}
+  tooltip: '10 Food : -2 Pop : -1 People Rep : 3 Turns'

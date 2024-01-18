@@ -23,3 +23,5 @@ MonoBehaviour:
     Suspicion: 1
     RepSoviet: 0
     RepPeople: 2
+  m_eventScript: {fileID: 0}
+  tooltip: '-10 Food : 1 Suspicion : 2 People Rep'
